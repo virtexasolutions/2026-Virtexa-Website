@@ -1,0 +1,86 @@
+name: SEO Article Agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: "SEO article title or working headline"
+        required: true
+        type: string
+      topic:
+        description: "Brief topic, angle, or audience context"
+        required: false
+        type: string
+      primary_keyword:
+        description: "Primary SEO keyword"
+        required: true
+        type: string
+      secondary_keywords:
+        description: "Comma-separated supporting keywords"
+        required: false
+        type: string
+      category:
+        description: "Blog category label"
+        required: false
+        default: "Automation"
+        type: string
+      slug:
+        description: "Optional URL slug without .html"
+        required: false
+        type: string
+      publish:
+        description: "Commit and push the generated article to the site"
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    name: Generate and store article
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate SEO article
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-4.1-mini' }}
+          ARTICLE_TITLE: ${{ inputs.title }}
+          ARTICLE_TOPIC: ${{ inputs.topic }}
+          PRIMARY_KEYWORD: ${{ inputs.primary_keyword }}
+          SECONDARY_KEYWORDS: ${{ inputs.secondary_keywords }}
+          ARTICLE_CATEGORY: ${{ inputs.category }}
+          ARTICLE_SLUG: ${{ inputs.slug }}
+        run: python scripts/generate_seo_article.py
+
+      - name: Upload generated article artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-seo-article
+          path: |
+            articles/*.md
+            *.html
+            blog.html
+
+      - name: Commit generated article
+        if: ${{ inputs.publish }}
+        env:
+          COMMIT_TITLE: ${{ inputs.title }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add articles/*.md *.html blog.html
+          git diff --cached --quiet || git commit -m "Add SEO article: ${COMMIT_TITLE}"
+          git push

@@ -97,6 +97,8 @@ function rafDebounce(fn) {
 
 /* ════════════════════════════════════ REVEAL ANIMATIONS ═══ */
 (function initReveal() {
+  document.documentElement.classList.add('reveal-ready');
+
   if (prefersReducedMotion()) {
     document.querySelectorAll('.reveal-up').forEach(el => {
       el.classList.add('is-visible');
@@ -119,7 +121,7 @@ function rafDebounce(fn) {
         }
       });
     },
-    { threshold: 0.2, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.01, rootMargin: '0px 0px -40px 0px' }
   );
 
   elements.forEach(el => observer.observe(el));
@@ -318,7 +320,9 @@ function rafDebounce(fn) {
 (function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
-      const target = document.querySelector(anchor.getAttribute('href'));
+      const href = anchor.getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.querySelector(href);
       if (!target) return;
       e.preventDefault();
       const navHeight = document.getElementById('nav')?.offsetHeight || 72;
