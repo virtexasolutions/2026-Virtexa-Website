@@ -203,7 +203,7 @@ def article_template(article: dict[str, str], slug: str, article_html: str, date
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20260504-blog" />
   <script type="application/ld+json">
     {json.dumps(schema, indent=4)}
   </script>
