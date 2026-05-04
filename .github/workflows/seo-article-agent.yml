@@ -33,6 +33,8 @@ on:
         required: true
         default: true
         type: boolean
+  schedule:
+    - cron: "0 14,20 * * 1-5"
 
 permissions:
   contents: write
@@ -57,11 +59,11 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-4.1-mini' }}
-          ARTICLE_TITLE: ${{ inputs.title }}
-          ARTICLE_TOPIC: ${{ inputs.topic }}
-          PRIMARY_KEYWORD: ${{ inputs.primary_keyword }}
-          SECONDARY_KEYWORDS: ${{ inputs.secondary_keywords }}
-          ARTICLE_CATEGORY: ${{ inputs.category }}
+          ARTICLE_TITLE: ${{ inputs.title || 'Fresh AI automation strategy for growing businesses' }}
+          ARTICLE_TOPIC: ${{ inputs.topic || 'Choose a fresh, practical SEO article angle for Virtexa Solutions about AI automation, workflow optimization, digital infrastructure, business operating systems, or agent orchestration.' }}
+          PRIMARY_KEYWORD: ${{ inputs.primary_keyword || 'AI workflow automation' }}
+          SECONDARY_KEYWORDS: ${{ inputs.secondary_keywords || 'business process automation, AI automation strategy, workflow optimization, digital infrastructure, business operating system' }}
+          ARTICLE_CATEGORY: ${{ inputs.category || 'Automation' }}
           ARTICLE_SLUG: ${{ inputs.slug }}
         run: python scripts/generate_seo_article.py
 
@@ -75,9 +77,9 @@ jobs:
             blog.html
 
       - name: Commit generated article
-        if: ${{ inputs.publish }}
+        if: ${{ github.event_name == 'schedule' || inputs.publish }}
         env:
-          COMMIT_TITLE: ${{ inputs.title }}
+          COMMIT_TITLE: ${{ inputs.title || 'Scheduled SEO article' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
