@@ -42,6 +42,7 @@ permissions:
 jobs:
   generate:
     name: Generate and store article
+    if: ${{ github.repository == 'virtexasolutions/2026-Virtexa-Website' }}
     runs-on: ubuntu-latest
 
     steps:
