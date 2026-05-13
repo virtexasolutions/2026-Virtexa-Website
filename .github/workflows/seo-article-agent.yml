@@ -58,7 +58,7 @@ jobs:
 
       - name: Generate SEO article
         env:
-          OPENAI_API_KEY: ${{ secrets.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 }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-4.1-mini' }}
           ARTICLE_TITLE: ${{ inputs.title || 'Fresh AI automation strategy for growing businesses' }}
           ARTICLE_TOPIC: ${{ inputs.topic || 'Choose a fresh, practical SEO article angle for Virtexa Solutions about AI automation, workflow optimization, digital infrastructure, business operating systems, or agent orchestration.' }}
