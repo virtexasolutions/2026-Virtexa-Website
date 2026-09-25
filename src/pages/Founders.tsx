@@ -36,14 +36,21 @@ const founders: Founder[] = [
     name: "Diamond Carter",
     initials: "DC",
     title: "Co-Founder",
+    tagline: "Realtor · Hampton Roads & Augusta",
     linkedin: "https://www.linkedin.com/in/realtordiamondcarter/",
     bio: [
-      "Diamond Carter is a co-founder of Virtexa Solutions, helping shape how Virtexa's AI voice agents and automation systems serve real estate teams and brokerages.",
+      "Diamond Carter is a co-founder of Virtexa Solutions and a practicing Realtor with Mikel Realty Inc., brokered by Keller Williams Coastal Virginia, specializing in luxury homes, military relocation, and investment properties across Hampton Roads and Augusta.",
+      "Diamond's approach is thoughtful, polished, and relationship-driven, with a strong emphasis on communication, discretion, and strategic guidance at every stage of a transaction. Georgia-rooted and Coastal Virginia-focused, and the child of two Army veterans, Diamond brings a personal understanding of the transitions military and civilian families face when relocating, investing, or stepping into a new season of life.",
+      "That frontline experience is why Virtexa's systems work in the real world. Diamond knows firsthand what a missed call, a slow follow-up, or a cold database costs an agent, and makes sure every Virtexa AI voice agent reflects the care, responsiveness, and professionalism clients expect from a trusted Realtor.",
     ],
   },
 ];
 
 const trustPoints = [
+  {
+    title: "For agents, by agents",
+    text: "Co-founded by a practicing Realtor, so our systems are built around how real estate actually works: lead response, follow-up, and client relationships.",
+  },
   {
     title: "Building since 2017",
     text: "Nearly a decade of hands-on work in web design, marketing, and automation, long before AI became a trend.",
@@ -55,10 +62,6 @@ const trustPoints = [
   {
     title: "Human-centered by design",
     text: "A background in UX design and marketing means AI that sounds and feels human, and protects the brand you have built.",
-  },
-  {
-    title: "Clarity over complexity",
-    text: "You know what we are building, why it matters, and how it performs. No black boxes and no jargon.",
   },
 ];
 
@@ -75,7 +78,7 @@ const structuredData = {
     founder: founders.map((f) => ({
       "@type": "Person",
       name: f.name,
-      jobTitle: f.title,
+      jobTitle: f.tagline ? `${f.title}, ${f.tagline}` : f.title,
       sameAs: [f.linkedin],
       worksFor: { "@type": "Organization", name: "Virtexa Solutions" },
     })),
