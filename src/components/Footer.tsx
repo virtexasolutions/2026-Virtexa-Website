@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Mail, MapPin } from "lucide-react";
 
 const footerLinks = {
@@ -96,7 +97,13 @@ export default function Footer() {
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Virtexa Solutions. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-muted-foreground">
+          <div className="flex flex-wrap justify-center gap-6 text-xs text-muted-foreground">
+            <Link
+              to="/founders"
+              className="transition-colors hover:text-[hsl(28,40%,76%)]"
+            >
+              Founders
+            </Link>
             <a
               href="#"
               className="transition-colors hover:text-[hsl(28,40%,76%)]"

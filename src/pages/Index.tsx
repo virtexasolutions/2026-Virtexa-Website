@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
@@ -12,6 +13,14 @@ import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
 
 const Index = () => {
+  useEffect(() => {
+    if (window.location.hash) {
+      document
+        .querySelector(window.location.hash)
+        ?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-background">
       <Header />
