@@ -113,18 +113,18 @@ export default function Footer() {
             >
               Founders
             </Link>
-            <a
-              href="#"
+            <Link
+              to="/privacy"
               className="transition-colors hover:text-[hsl(28,40%,76%)]"
             >
               Privacy Policy
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/terms"
               className="transition-colors hover:text-[hsl(28,40%,76%)]"
             >
               Terms of Service
-            </a>
+            </Link>
             <a
               href="#"
               className="transition-colors hover:text-[hsl(28,40%,76%)]"
