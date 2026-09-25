@@ -9,7 +9,7 @@ const footerLinks = {
     "Live Warm Transfer",
   ],
   Company: ["About", "Use Cases", "Comparison", "Pricing", "Virtexa Connect"],
-  Resources: ["System Audit", "Live Demo", "FAQ", "Documentation"],
+  Resources: ["System Audit", "Live Demo", "FAQ"],
 };
 
 export default function Footer() {
@@ -125,12 +125,6 @@ export default function Footer() {
             >
               Terms of Service
             </Link>
-            <a
-              href="#"
-              className="transition-colors hover:text-[hsl(28,40%,76%)]"
-            >
-              Security
-            </a>
           </div>
         </div>
       </div>
