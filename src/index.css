@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Virtexa Solutions Design System — elegant boutique aesthetic
+   Primary: #C19A83  Secondary: #443A34  Accent: #C19A83
+   Background: #1A1A1A  Text Primary: #FDF8F5  Link: #D4AE97
+   Typography: Playfair Display (headings) + Outfit (body) */
+
+@layer base {
+  :root {
+    /* Dark-first warm theme */
+    --background: 0 0% 10%; /* #1A1A1A */
+    --background-deep: 0 0% 7%; /* slightly darker */
+    --foreground: 25 44% 98%; /* #FDF8F5 */
+
+    --card: 30 12% 14%; /* warm-tinted dark card */
+    --card-foreground: 25 44% 98%;
+    --card-elevated: 30 10% 17%;
+
+    --popover: 30 12% 14%;
+    --popover-foreground: 25 44% 98%;
+
+    --primary: 21 38% 64%; /* #C19A83 */
+    --primary-foreground: 0 0% 10%;
+    --primary-glow: 21 42% 72%; /* lighter terracotta */
+
+    --secondary: 28 14% 22%; /* #443A34 */
+    --secondary-foreground: 25 44% 98%;
+
+    --muted: 30 8% 20%;
+    --muted-foreground: 28 14% 62%; /* warm gray text */
+
+    --accent: 21 38% 64%; /* #C19A83 */
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 60% 55%;
+    --destructive-foreground: 25 44% 98%;
+
+    --border: 30 10% 22%;
+    --input: 30 10% 22%;
+    --ring: 21 38% 64%;
+
+    --radius: 0.85rem;
+
+    --success: 150 40% 50%; /* muted sage for success */
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(21 38% 64%),
+      hsl(28 35% 72%)
+    );
+    --gradient-glow: radial-gradient(
+      ellipse at top,
+      hsl(21 42% 72% / 0.16),
+      transparent 60%
+    );
+    --gradient-cta: linear-gradient(135deg, hsl(21 38% 64%), hsl(28 35% 72%));
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 25 44% 98%;
+    --sidebar-primary: 21 38% 64%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 28 14% 22%;
+    --sidebar-accent-foreground: 25 44% 98%;
+    --sidebar-border: 30 10% 22%;
+    --sidebar-ring: 21 38% 64%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Outfit", sans-serif;
+    font-size: 18px;
+    font-feature-settings: "ss01", "cv01", "cv02";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: hsl(21 38% 64% / 0.3);
+    color: hsl(25 44% 99%);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(0 0% 7%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(30 10% 22%);
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(21 38% 64% / 0.5);
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: hsl(30 12% 14% / 0.6);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid hsl(30 10% 22% / 0.8);
+  }
+
+  .glass-strong {
+    background: hsl(0 0% 8% / 0.85);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid hsl(30 12% 24% / 0.9);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(21 38% 64%), hsl(28 40% 76%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .gradient-border {
+    position: relative;
+    background: hsl(30 12% 14%);
+    border-radius: var(--radius);
+  }
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1.5px;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      hsl(21 38% 64%),
+      hsl(28 40% 76%),
+      hsl(340 30% 55%)
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .glow-primary {
+    box-shadow:
+      0 0 40px -8px hsl(21 38% 64% / 0.45),
+      0 0 80px -20px hsl(28 40% 72% / 0.3);
+  }
+
+  .glow-soft {
+    box-shadow: 0 10px 40px -10px hsl(21 38% 64% / 0.22);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 24px hsl(21 38% 64% / 0.4);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(30 10% 22% / 0.35) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(30 10% 22% / 0.35) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent);
+    mask-image: linear-gradient(to bottom, #000 60%, transparent);
+  }
+
+  .animate-marquee {
+    animation: marquee 32s linear infinite;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-pulse-ring {
+    animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  @keyframes pulse-ring {
+    0% {
+      box-shadow: 0 0 0 0 hsl(21 38% 64% / 0.5);
+    }
+    70% {
+      box-shadow: 0 0 0 12px hsl(21 38% 64% / 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 hsl(21 38% 64% / 0);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
