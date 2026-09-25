@@ -49,7 +49,6 @@ const tiers: Tier[] = [
     features: [
       "Multi-Agent Voice Routing (6–15)",
       "Advanced CRM Synchronization",
-      "Listing-to-Social Automation",
       "Priority Support",
     ],
   },
@@ -62,7 +61,6 @@ const tiers: Tier[] = [
     popular: true,
     features: [
       "Front-Desk Voice Concierge",
-      "AI Recruiting Engine",
       "Up to 15 Agent Sub-Accounts",
       "Custom MLS Knowledge Base",
     ],

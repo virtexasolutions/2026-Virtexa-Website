@@ -5,7 +5,7 @@ import BookingCalendar from "./BookingCalendar";
 
 const steps = [
   "We analyze your current lead handling & CRM setup",
-  "We map out your custom AI Voice & Recruiting workflow",
+  "We map out your custom AI Voice & Follow-Up workflow",
   "We deliver an exact implementation blueprint",
 ];
 

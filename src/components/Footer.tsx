@@ -5,8 +5,7 @@ const footerLinks = {
   Solutions: [
     "Speed-to-Lead Voice AI",
     "Database Reactivation",
-    "Listing-to-Social",
-    "AI Recruiting Engine",
+    "Front-Desk Voice Concierge",
   ],
   Company: ["About", "Use Cases", "Comparison", "Pricing", "Virtexa Connect"],
   Resources: ["System Audit", "Live Demo", "FAQ", "Documentation"],

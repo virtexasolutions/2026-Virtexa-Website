@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
-import {
-  Phone,
-  Database,
-  Share2,
-  UserPlus,
-  Building2,
-  Layers,
-} from "lucide-react";
+import { Phone, Database, Building2, Layers } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const teams = [
@@ -18,30 +12,20 @@ const teams = [
   {
     icon: Database,
     title: "Database Reactivation Engine",
-    text: "Automated multi-channel campaigns (Voice, SMS, Email) execute hyper-personalized outreach to re-engage cold leads and convert silent CRM records into listing consultations.",
-  },
-  {
-    icon: Share2,
-    title: "Listing-to-Social Automation",
-    text: "Instant media asset creation, automated listing copy generation, and social media dispatch workflows triggered the second a listing hits intake.",
+    text: "Automated SMS and email follow-up sequences re-engage the cold and past leads already sitting in your CRM, and book interested contacts directly onto your calendar.",
   },
 ];
 
 const brokerages = [
   {
-    icon: UserPlus,
-    title: "AI Agent Recruiting Engine",
-    text: "Autonomous outbound voice campaigns identify, contact, and pre-qualify regional talent, booking top-producing agents directly onto the Managing Broker's schedule.",
-  },
-  {
     icon: Phone,
     title: "Brokerage Front-Desk Voice Concierge",
-    text: "Centralized AI receptionist answers office calls, routes listing inquiries, answers roster questions, and captures lead data with zero hold time.",
+    text: "An AI receptionist answers every office call 24/7, captures caller details into your CRM, books appointments, and warm-transfers hot leads to the right agent in real time.",
   },
   {
     icon: Layers,
     title: "White-Labeled Real Estate Platform",
-    text: "Deliver a fully branded tech ecosystem to your rostered agents as a high-value recruiting and retention perk.",
+    text: "Deliver a fully branded tech ecosystem to your rostered agents as a high-value perk that helps attract and retain agents.",
   },
 ];
 
@@ -125,7 +109,12 @@ function OfferCard({
         </span>
         <p className="text-sm text-muted-foreground">{subtitle}</p>
       </div>
-      <div className="grid gap-5 md:grid-cols-3">
+      <div
+        className={cn(
+          "grid gap-5",
+          items.length === 2 ? "md:grid-cols-2" : "md:grid-cols-3",
+        )}
+      >
         {items.map((item, i) => (
           <motion.div
             key={i}

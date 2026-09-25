@@ -464,7 +464,7 @@ async function getBotResponseAsync(
           {
             role: "system",
             content:
-              "You are Virtexa AI, the conversational AI sales engineer for Virtexa Solutions. Virtexa provides custom AI voice agents and autonomous operating systems for real estate top producers, teams, and brokerages. You answer questions about speed-to-lead qualification (<5s response), 24/7 cold database reactivation, outbound AI agent recruiting, and CRM integrations (Follow Up Boss, kvCORE, BoomTown, Salesforce). Whenever a user expresses interest in a system audit, demo, pricing quote, or consultation, encourage them to pick a time directly in the chat widget.",
+              "You are Virtexa AI, the conversational AI sales engineer for Virtexa Solutions. Virtexa provides custom AI voice agents and autonomous operating systems for real estate top producers, teams, and brokerages. You answer questions about speed-to-lead qualification (<5s response), 24/7 AI call answering with live warm transfers, the brokerage front-desk voice concierge, database reactivation via automated SMS and email follow-up, and CRM integrations (Follow Up Boss, kvCORE, BoomTown, Salesforce). Whenever a user expresses interest in a system audit, demo, pricing quote, or consultation, encourage them to pick a time directly in the chat widget.",
           },
           ...chatHistory,
           { role: "user", content: input },
@@ -553,11 +553,6 @@ async function getBotResponseAsync(
       text: "Standard Team setups launch within 10–14 business days. Enterprise Brokerage implementations typically deploy within 21–30 days, depending on custom MLS data integration, brand voice training, and roster scale.",
     };
   }
-  if (q.includes("recruit") || (q.includes("agent") && q.includes("find"))) {
-    return {
-      text: "Our AI Recruiting Engine runs autonomous outbound voice campaigns targeting regional producing agents. It handles discovery, qualifies talent, and books top producers directly onto your Managing Broker's schedule.",
-    };
-  }
   if (
     q.includes("database") ||
     q.includes("reactivat") ||
@@ -565,7 +560,7 @@ async function getBotResponseAsync(
     q.includes("dormant")
   ) {
     return {
-      text: "The Database Reactivation Engine executes multi-channel campaigns (Voice, SMS, Email) across your dormant CRM contacts. It re-engages past leads with hyper-personalized messaging and turns cold contacts into active listing consultations.",
+      text: "The Database Reactivation Engine runs automated SMS and email follow-up sequences across the cold and past leads in your CRM, and books interested contacts directly onto your calendar.",
     };
   }
   if (
@@ -584,7 +579,7 @@ async function getBotResponseAsync(
     q.includes("office")
   ) {
     return {
-      text: "For brokerages, Virtexa provides a Front-Desk Voice Concierge, AI Recruiting Engine, and a White-Labeled Platform for your rostered agents to accelerate recruiting and retention.",
+      text: "For brokerages, Virtexa provides a Front-Desk Voice Concierge that answers every office call 24/7, captures caller details into your CRM, books appointments, and warm-transfers hot leads to the right agent — plus a White-Labeled Platform for your rostered agents.",
     };
   }
   if (

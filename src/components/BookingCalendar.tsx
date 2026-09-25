@@ -494,7 +494,9 @@ export default function BookingCalendar() {
                   <option value="Database Reactivation">
                     Database Reactivation
                   </option>
-                  <option value="Agent Recruiting">Agent Recruiting</option>
+                  <option value="Front-Desk Voice Concierge">
+                    Front-Desk Voice Concierge
+                  </option>
                   <option value="Full Operating System">
                     Full Operating System
                   </option>

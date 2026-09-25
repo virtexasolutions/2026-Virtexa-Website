@@ -23,12 +23,6 @@ const rows: { feature: string; basic: Cell; saas: Cell; virtexa: Cell }[] = [
     virtexa: "Custom Trained on Local MLS & Brand",
   },
   {
-    feature: "Brokerage Recruiting AI",
-    basic: "no",
-    saas: "no",
-    virtexa: "Turnkey Outbound Recruiting Engine",
-  },
-  {
     feature: "Telephony Setup",
     basic: "warn",
     saas: "High Per-Minute Markup",
