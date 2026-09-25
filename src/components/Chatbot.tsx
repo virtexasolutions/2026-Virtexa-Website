@@ -409,15 +409,9 @@ function ChatBookingWidget({
             className="w-full rounded bg-[hsl(0,0%,8%)] border border-[hsl(30,10%,22%)] px-2 py-1 text-[11px] text-foreground focus:outline-none"
           >
             <option value="">Team Type...</option>
-            <option value="Solo Producer">Solo Producer</option>
-            <option value="Team (2-5)">Team (2-5)</option>
-            <option value="Team (6-15)">Team (6-15)</option>
-            <option value="Single Office Brokerage">
-              Single Office Brokerage
-            </option>
-            <option value="Multi-Office Brokerage">
-              Multi-Office Brokerage
-            </option>
+            <option value="Solo Agent">Solo Agent</option>
+            <option value="Team (2-4 agents)">Team (2–4 agents)</option>
+            <option value="Brokerage (5+ agents)">Brokerage (5+ agents)</option>
           </select>
 
           {error && <p className="text-[10px] text-red-400">{error}</p>}
