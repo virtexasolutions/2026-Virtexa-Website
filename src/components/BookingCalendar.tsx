@@ -468,14 +468,10 @@ export default function BookingCalendar() {
                   className="mt-1 w-full h-9 rounded-md border border-[hsl(30,10%,22%)] bg-[hsl(30,12%,10%)] px-3 text-sm text-foreground"
                 >
                   <option value="">Select...</option>
-                  <option value="Solo Producer">Solo Producer</option>
-                  <option value="Team (2-5)">Team (2-5)</option>
-                  <option value="Team (6-15)">Team (6-15)</option>
-                  <option value="Single Office Brokerage">
-                    Single Office Brokerage
-                  </option>
-                  <option value="Multi-Office Brokerage">
-                    Multi-Office Brokerage
+                  <option value="Solo Agent">Solo Agent</option>
+                  <option value="Team (2-4 agents)">Team (2–4 agents)</option>
+                  <option value="Brokerage (5+ agents)">
+                    Brokerage (5+ agents)
                   </option>
                 </select>
               </div>
@@ -490,16 +486,22 @@ export default function BookingCalendar() {
                   className="mt-1 w-full h-9 rounded-md border border-[hsl(30,10%,22%)] bg-[hsl(30,12%,10%)] px-3 text-sm text-foreground"
                 >
                   <option value="">Select...</option>
-                  <option value="Speed-to-Lead">Speed-to-Lead</option>
-                  <option value="Database Reactivation">
-                    Database Reactivation
+                  <option value="Answer Every Call 24/7">
+                    Answer Every Call 24/7
                   </option>
-                  <option value="Front-Desk Voice Concierge">
-                    Front-Desk Voice Concierge
+                  <option value="Qualify & Book More Leads">
+                    Qualify & Book More Leads
                   </option>
-                  <option value="Full Operating System">
-                    Full Operating System
+                  <option value="Text Back Missed Calls">
+                    Text Back Missed Calls
                   </option>
+                  <option value="Automate Follow-Up & Pipeline">
+                    Automate Follow-Up & Pipeline
+                  </option>
+                  <option value="Warm-Transfer Hot Leads">
+                    Warm-Transfer Hot Leads
+                  </option>
+                  <option value="All of the Above">All of the Above</option>
                 </select>
               </div>
 
