@@ -25,39 +25,43 @@ const scenarios = [
   },
   {
     id: 2,
-    title: "Cold CRM Database Reactivation Call",
+    title: "After-Hours Seller Inquiry Call",
     duration: "0:20",
     transcript: [
       {
-        speaker: "AI",
-        text: "Hi Sarah, it's Jamie following up from your interest in the Oakwood area last spring. Have you found a home yet?",
-      },
-      {
-        speaker: "Lead",
-        text: "Not yet, we're still looking. The market's been tough.",
+        speaker: "Caller",
+        text: "Hi, I saw your sign on Maple Street. I'm thinking about selling my place nearby. Is anyone available?",
       },
       {
         speaker: "AI",
-        text: "I completely understand. We just listed three homes in Oakwood this week. Would a quick virtual tour work for you?",
+        text: "Absolutely, thanks for calling! When are you hoping to list, and is the home in the same neighborhood?",
+      },
+      {
+        speaker: "Caller",
+        text: "Probably this spring. It's a few blocks over.",
+      },
+      {
+        speaker: "AI",
+        text: "Perfect. I can book you a free listing consultation. Does Thursday at 4 PM work?",
       },
     ],
   },
   {
     id: 3,
-    title: "Outbound Brokerage Agent Recruiting Call",
+    title: "Brokerage Front-Desk Concierge Call",
     duration: "0:20",
     transcript: [
       {
         speaker: "AI",
-        text: "Hi Marcus, this is Taylor with Premier Realty. I know you're a top producer at your current brokerage — are you open to learning about a new opportunity?",
+        text: "Thank you for calling Premier Realty. How can I help you today?",
       },
       {
-        speaker: "Agent",
-        text: "Depends on what you're offering. What's the split?",
+        speaker: "Caller",
+        text: "I'm pre-approved and want to see the house on Oak Lane this weekend.",
       },
       {
         speaker: "AI",
-        text: "Great question. Our Managing Broker would love to walk you through it. Can I book a 15-minute call this week?",
+        text: "Great! Let me grab your name and number, then I'll connect you with the listing agent right now.",
       },
     ],
   },

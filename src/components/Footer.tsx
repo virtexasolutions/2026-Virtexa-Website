@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin } from "lucide-react";
+import { Linkedin, Mail, MapPin } from "lucide-react";
 
 const footerLinks = {
   Solutions: [
-    "Speed-to-Lead Voice AI",
-    "Database Reactivation",
-    "Listing-to-Social",
-    "AI Recruiting Engine",
+    "24/7 AI Call Answering",
+    "Missed-Call Text-Back",
+    "Appointment Booking",
+    "Live Warm Transfer",
   ],
   Company: ["About", "Use Cases", "Comparison", "Pricing", "Virtexa Connect"],
   Resources: ["System Audit", "Live Demo", "FAQ", "Documentation"],
@@ -59,6 +59,15 @@ export default function Footer() {
                 <MapPin className="h-4 w-4 text-[hsl(28,40%,76%)]" />
                 <span>Enterprise AI Infrastructure</span>
               </div>
+              <a
+                href="https://www.linkedin.com/company/virtexa-solutions/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 transition-colors hover:text-[hsl(28,40%,76%)]"
+              >
+                <Linkedin className="h-4 w-4 text-[hsl(28,40%,76%)]" />
+                <span>Virtexa Solutions on LinkedIn</span>
+              </a>
             </div>
           </div>
 

@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
-import { Clock, Database, UserPlus, X, Zap } from "lucide-react";
+import { Clock, Database, PhoneMissed, X, Zap } from "lucide-react";
 
 const oldWay = [
   "15+ minute response delay to Zillow",
   "Cold CRM leads sitting untouched",
-  "Manual, low-converting recruiter calls",
+  "Office calls rolling to voicemail",
   "$4k/mo offshore VAs requiring management",
 ];
 
 const virtexaWay = [
   "Instant 5-second AI voice callback",
-  "Automated database reactivation",
-  "Outbound AI agent recruiting engine",
+  "Instant missed-call text-back",
+  "24/7 AI front-desk concierge",
   "Zero-management custom Virtexa OS",
 ];
 
@@ -27,9 +27,9 @@ const problems = [
     text: "Your database is filled with thousands of leads collected over years. Without consistent, personalized multi-channel follow-up, your single largest asset decays while competitors poach your sphere.",
   },
   {
-    icon: UserPlus,
-    title: "The Brokerage Recruiting Bottleneck",
-    text: "Managing Brokers spend dozens of hours cold calling agents or paying thousands in headhunter fees. Without an automated outbound recruitment engine, brokerage growth stalls.",
+    icon: PhoneMissed,
+    title: "The Voicemail Leak",
+    text: "Calls that hit voicemail after hours, on weekends, or while you're with a client rarely call back. Without someone answering every line, ready-to-move buyers and sellers simply call the next agent.",
   },
 ];
 

@@ -23,10 +23,10 @@ interface Message {
 
 const quickPrompts = [
   "Book an audit",
+  "What's included?",
+  "Which plan fits me?",
   "How fast can we go live?",
   "Does the AI sound robotic?",
-  "How does pricing work?",
-  "CRM integrations?",
 ];
 
 const CALENDAR_ID = "lGWutJTLLOiszDqfKUfG";
@@ -464,7 +464,7 @@ async function getBotResponseAsync(
           {
             role: "system",
             content:
-              "You are Virtexa AI, the conversational AI sales engineer for Virtexa Solutions. Virtexa provides custom AI voice agents and autonomous operating systems for real estate top producers, teams, and brokerages. You answer questions about speed-to-lead qualification (<5s response), 24/7 cold database reactivation, outbound AI agent recruiting, and CRM integrations (Follow Up Boss, kvCORE, BoomTown, Salesforce). Whenever a user expresses interest in a system audit, demo, pricing quote, or consultation, encourage them to pick a time directly in the chat widget.",
+              "You are Virtexa AI, the conversational AI sales engineer for Virtexa Solutions. Virtexa provides custom AI voice agents and autonomous operating systems for real estate top producers, teams, and brokerages. Every plan includes the same six-part core build: 24/7 AI call answering, live lead qualification (budget, timeline, motivation) logged to the CRM, instant missed-call text-back, showing and appointment booking, a pipeline and follow-up automation build wired into the client's CRM, and live warm transfer. There are three plans: Solo Agent (one agent or a small team covering their first line), Team (2–4 agents on shared lines), and Brokerage (5+ agents or multi-office). Most agents go live within 10–14 days of kickoff. Never quote prices, minutes, or specific CRM platform names; pricing is custom-quoted after a System Audit. Only describe the features listed here. Whenever a user expresses interest in a system audit, demo, pricing quote, or consultation, encourage them to pick a time directly in the chat widget.",
           },
           ...chatHistory,
           { role: "user", content: input },
@@ -508,6 +508,42 @@ async function getBotResponseAsync(
     };
   }
   if (
+    q.includes("include") ||
+    q.includes("feature") ||
+    q.includes("offer") ||
+    q.includes("what do you do")
+  ) {
+    return {
+      text: "Every Virtexa plan includes the same six-part core build: 24/7 AI call answering, live lead qualification (budget, timeline, and motivation logged to your CRM), instant missed-call text-back, showing and appointment booking, a pipeline and follow-up automation build, and live warm transfer for hot leads.",
+    };
+  }
+  if (
+    q.includes("which plan") ||
+    q.includes("solo") ||
+    q.includes("team") ||
+    q.includes("fit")
+  ) {
+    return {
+      text: "Solo Agent covers a single agent or small team getting their first line answered. Team is for 2–4 agents on shared lines, with a shared reporting dashboard and coordinated rollout. Brokerage is for 5+ agents or multi-office operations, with a dedicated onboarding specialist and success manager. Book a System Audit and we'll recommend the right fit:",
+      showBookingWidget: true,
+    };
+  }
+  if (q.includes("text") || q.includes("sms") || q.includes("missed")) {
+    return {
+      text: "When a call is missed, the lead gets a text reply within seconds, before they have a chance to call the next listing agent.",
+    };
+  }
+  if (q.includes("transfer") || q.includes("person")) {
+    return {
+      text: "When a hot lead asks for a person, your Virtexa agent warm-transfers the call to you in real time. No voicemail, no lost momentum.",
+    };
+  }
+  if (q.includes("qualif")) {
+    return {
+      text: "On every call, your agent captures the lead's budget, timeline, and motivation and logs it straight to the CRM record, so you know who to call first.",
+    };
+  }
+  if (
     q.includes("price") ||
     q.includes("cost") ||
     q.includes("tier") ||
@@ -515,7 +551,7 @@ async function getBotResponseAsync(
     q.includes("invest")
   ) {
     return {
-      text: "Virtexa offers five custom partnership tiers — from Solo Producer to Brokerage Enterprise. Pricing is tailored to your brokerage scale and lead volume. Pick a time for an audit below to get an exact implementation blueprint and quote:",
+      text: "Virtexa offers three plans — Solo Agent, Team, and Brokerage — and every plan includes the same core build. Pricing is custom-quoted after your System Audit. Pick a time below to get your exact blueprint and quote:",
       showBookingWidget: true,
     };
   }
@@ -528,7 +564,7 @@ async function getBotResponseAsync(
     q.includes("salesforce")
   ) {
     return {
-      text: "Virtexa connects via 2-way sync to major real estate CRMs including Follow Up Boss, kvCORE, Salesforce, BoomTown, and Lofty. All call transcripts, audio recordings, qualification notes, lead statuses, and booked appointments sync instantly.",
+      text: "Your voice agent is wired straight into your CRM. We build your pipeline stages, follow-up sequences, and tagging around it, and every call's qualification details and booked appointments are logged to the lead's record.",
     };
   }
   if (
@@ -539,7 +575,7 @@ async function getBotResponseAsync(
     q.includes("human")
   ) {
     return {
-      text: "Not at all. Virtexa voice agents feature sub-800ms latency, natural inflection, custom cadence, and real-time interruption handling. Most leads assume they are talking to a human in-house ISA. Check out the interactive phone simulator in our Hero section to hear it live!",
+      text: "Not at all. Every Virtexa agent is custom-scripted for your business and tested against real call scenarios before it goes live, so it sounds like your team, not a generic bot. And when a caller asks for a person, the agent warm-transfers them to you in real time. Try the phone simulator at the top of the page to hear it live!",
     };
   }
   if (
@@ -550,12 +586,7 @@ async function getBotResponseAsync(
     q.includes("timeline")
   ) {
     return {
-      text: "Standard Team setups launch within 10–14 business days. Enterprise Brokerage implementations typically deploy within 21–30 days, depending on custom MLS data integration, brand voice training, and roster scale.",
-    };
-  }
-  if (q.includes("recruit") || (q.includes("agent") && q.includes("find"))) {
-    return {
-      text: "Our AI Recruiting Engine runs autonomous outbound voice campaigns targeting regional producing agents. It handles discovery, qualifies talent, and books top producers directly onto your Managing Broker's schedule.",
+      text: "Most agents are live and taking calls within 10–14 days of kickoff, with a monthly performance report from day one.",
     };
   }
   if (
@@ -565,7 +596,7 @@ async function getBotResponseAsync(
     q.includes("dormant")
   ) {
     return {
-      text: "The Database Reactivation Engine executes multi-channel campaigns (Voice, SMS, Email) across your dormant CRM contacts. It re-engages past leads with hyper-personalized messaging and turns cold contacts into active listing consultations.",
+      text: "Every Virtexa build includes your pipeline stages, follow-up sequences, and tagging, wired to your voice agent — so leads get consistent follow-up and interested contacts book straight onto your calendar.",
     };
   }
   if (
@@ -575,7 +606,7 @@ async function getBotResponseAsync(
     q.includes("missed call")
   ) {
     return {
-      text: "Virtexa guarantees an average inbound lead response time of under 5 seconds for yard sign calls, Zillow, Realtor.com, and web forms — 24/7/365 with 100% CRM sync accuracy.",
+      text: "Every inbound call is picked up in under two rings, 24/7 — and a missed call gets an instant text-back within seconds, before the lead can call the next agent.",
     };
   }
   if (
@@ -584,7 +615,7 @@ async function getBotResponseAsync(
     q.includes("office")
   ) {
     return {
-      text: "For brokerages, Virtexa provides a Front-Desk Voice Concierge, AI Recruiting Engine, and a White-Labeled Platform for your rostered agents to accelerate recruiting and retention.",
+      text: "Our Brokerage plan is built for brokerages and multi-office operations running 5+ agents. Every agent gets the full core build, plus a dedicated onboarding specialist, a scheduled multi-office rollout, and a dedicated success manager.",
     };
   }
   if (
@@ -609,7 +640,7 @@ async function getBotResponseAsync(
     };
   }
   return {
-    text: "I can answer questions regarding our AI voice agents, CRM integrations, deployment timelines, or schedule a 30-minute System Audit for your team right now. Would you like to select an audit date?",
+    text: "I can answer questions about what's included, our three plans (Solo Agent, Team, and Brokerage), and go-live timelines, or schedule a 30-minute System Audit for your team right now. Would you like to select an audit date?",
     showBookingWidget: true,
   };
 }

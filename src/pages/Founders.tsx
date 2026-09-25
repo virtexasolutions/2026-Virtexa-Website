@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 
 const SITE_URL = "https://virtexasolutions.com";
 const PAGE_URL = `${SITE_URL}/founders`;
+const COMPANY_LINKEDIN = "https://www.linkedin.com/company/virtexa-solutions/";
 const PAGE_TITLE = "Our Founders | Virtexa Solutions";
 const PAGE_DESCRIPTION =
   "Meet Rikki Carodine, founder, and Diamond Carter, co-founder, of Virtexa Solutions, building AI voice agents and automation systems for real estate teams and small businesses.";
@@ -75,6 +76,7 @@ const structuredData = {
     "@type": "Organization",
     name: "Virtexa Solutions",
     url: SITE_URL,
+    sameAs: [COMPANY_LINKEDIN],
     founder: founders.map((f) => ({
       "@type": "Person",
       name: f.name,
@@ -278,7 +280,7 @@ export default function Founders() {
               </div>
             ))}
           </div>
-          <div className="mt-12 text-center">
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
               asChild
               size="lg"
@@ -289,6 +291,15 @@ export default function Founders() {
                 Book Your 30-Minute System Audit
               </a>
             </Button>
+            <a
+              href={COMPANY_LINKEDIN}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-[hsl(21,38%,64%,0.3)] px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-[hsl(28,40%,76%)] hover:text-[hsl(28,40%,76%)]"
+            >
+              <Linkedin className="h-4 w-4" />
+              Follow Virtexa Solutions on LinkedIn
+            </a>
           </div>
         </section>
       </main>

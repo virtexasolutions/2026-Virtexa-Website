@@ -4,9 +4,6 @@ import { cn } from "@/lib/utils";
 
 interface Tier {
   name: string;
-  buildFee: string;
-  monthly: string;
-  annual: string;
   bestFor: string;
   popular?: boolean;
   features: string[];
@@ -14,70 +11,34 @@ interface Tier {
 
 const tiers: Tier[] = [
   {
-    name: "Solo Producer",
-    buildFee: "$3,500",
-    monthly: "$750",
-    annual: "$9,500",
-    bestFor: "Solo Agents",
+    name: "Solo Agent",
+    bestFor:
+      "For a single agent or a small team getting their first line covered.",
     features: [
-      "Single AI Voice Agent",
-      "24/7 Speed-to-Lead",
-      "Core CRM Integration",
-      "Pass-Through Telephony",
+      "1 dedicated voice agent",
+      "Full CRM & automation build",
+      "Monthly performance report",
     ],
   },
   {
-    name: "Team Pro",
-    buildFee: "$5,000",
-    monthly: "$1,500",
-    annual: "$18,000",
-    bestFor: "Teams (2–5)",
+    name: "Team",
+    bestFor: "For teams and offices running 2–4 agents on shared lines.",
     popular: true,
     features: [
-      "Up to 3 AI Voice Seats",
-      "Database Reactivation Engine",
-      "Custom Lead Flow Routing",
-      "Full Pipeline Automation",
+      "Everything in Solo, per agent",
+      "Shared team reporting dashboard",
+      "Priority build turnaround",
+      "Coordinated multi-line rollout",
     ],
   },
   {
-    name: "Team Enterprise",
-    buildFee: "$10,000",
-    monthly: "$2,800",
-    annual: "$34,000",
-    bestFor: "Teams (6–15)",
+    name: "Brokerage",
+    bestFor: "For brokerages and multi-office operations running 5+ agents.",
     features: [
-      "Multi-Agent Voice Routing (6–15)",
-      "Advanced CRM Synchronization",
-      "Listing-to-Social Automation",
-      "Priority Support",
-    ],
-  },
-  {
-    name: "Brokerage Core",
-    buildFee: "$15,000",
-    monthly: "$4,500",
-    annual: "$55,000",
-    bestFor: "Single Office",
-    popular: true,
-    features: [
-      "Front-Desk Voice Concierge",
-      "AI Recruiting Engine",
-      "Up to 15 Agent Sub-Accounts",
-      "Custom MLS Knowledge Base",
-    ],
-  },
-  {
-    name: "Brokerage Enterprise",
-    buildFee: "$30,000 / loc",
-    monthly: "$8,500+ / loc",
-    annual: "$105,000+ / loc",
-    bestFor: "Multi-Office",
-    features: [
-      "Multi-Office / Franchise Architecture",
-      "Dedicated API Integrations",
-      "TC Document Tracking",
-      "White-Labeled Platform",
+      "Everything in Team, per agent",
+      "Dedicated onboarding specialist",
+      "Scheduled multi-office rollout",
+      "Dedicated success manager",
     ],
   },
 ];
@@ -88,22 +49,22 @@ export default function Pricing() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-[hsl(28,40%,76%)]">
-            Investment & Partnership Tiers
+            Plans
           </p>
           <h2
             className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl lg:text-[40px]"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            Virtexa Enterprise Investment Matrix
+            Pick the Plan That Fits Your Business
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Choose the architecture built for your scale. Custom pricing
-            tailored to your needs.
+            Every plan includes all six core features. Pricing is custom-quoted
+            after your System Audit.
           </p>
         </div>
 
         {/* Pricing cards */}
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="mx-auto mt-12 grid max-w-5xl gap-5 md:grid-cols-3">
           {tiers.map((tier, i) => (
             <motion.div
               key={i}
@@ -120,7 +81,7 @@ export default function Pricing() {
             >
               {tier.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-[hsl(21,38%,64%)] to-[hsl(28,35%,72%)] px-3 py-1 text-xs font-bold text-[hsl(0,0%,10%)]">
-                  Most Popular
+                  Most Common
                 </div>
               )}
 
@@ -130,7 +91,7 @@ export default function Pricing() {
               >
                 {tier.name}
               </h3>
-              <p className="mt-1 text-xs text-muted-foreground">
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {tier.bestFor}
               </p>
 
@@ -144,9 +105,9 @@ export default function Pricing() {
                 {tier.features.map((feature, fi) => (
                   <li
                     key={fi}
-                    className="flex items-start gap-2 text-xs text-muted-foreground"
+                    className="flex items-start gap-2 text-sm text-muted-foreground"
                   >
-                    <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[hsl(28,40%,76%)]" />
+                    <Check className="mt-1 h-3.5 w-3.5 shrink-0 text-[hsl(28,40%,76%)]" />
                     {feature}
                   </li>
                 ))}
@@ -173,7 +134,7 @@ export default function Pricing() {
 
         <p className="mt-8 flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground">
           <Star className="h-3.5 w-3.5 text-[hsl(28,40%,76%)]" />
-          All plans include dedicated onboarding & custom architecture.
+          Custom scripting, testing, and CRM setup included with every plan.
         </p>
       </div>
     </section>
