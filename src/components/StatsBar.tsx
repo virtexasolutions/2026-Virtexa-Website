@@ -1,8 +1,7 @@
 const stats = [
   { value: "< 5 Seconds", label: "Average Inbound Lead Response Time" },
-  { value: "$1.4M+", label: "Database Reactivation Volume Generated" },
-  { value: "24/7/365", label: "Autonomous Front-Desk & Outbound Operations" },
-  { value: "100%", label: "CRM & Pipeline Sync Accuracy" },
+  { value: "24/7/365", label: "Every Call Answered, Nights & Weekends" },
+  { value: "10–14 Days", label: "From Kickoff to Live Agent" },
 ];
 
 export default function StatsBar() {
@@ -12,7 +11,7 @@ export default function StatsBar() {
   return (
     <section className="relative border-y border-[hsl(30,10%,22%)] bg-[hsl(30,12%,8%,0.6)] py-5 backdrop-blur-sm">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+        <div className="grid grid-cols-3 gap-6">
           {stats.map((stat, i) => (
             <div key={i} className="text-center lg:text-left">
               <div

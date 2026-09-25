@@ -20,7 +20,7 @@ const rows: { feature: string; basic: Cell; saas: Cell; virtexa: Cell }[] = [
     feature: "Voice Agent Customization",
     basic: "warn",
     saas: "Minute Caps / Overages",
-    virtexa: "Custom Trained on Local MLS & Brand",
+    virtexa: "Custom Scripted & Tested for Your Brand",
   },
   {
     feature: "Telephony Setup",

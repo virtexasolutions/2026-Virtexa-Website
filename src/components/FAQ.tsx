@@ -9,7 +9,7 @@ import {
 const faqs = [
   {
     q: "How does Virtexa integrate with our existing CRM?",
-    a: "Virtexa builds directly on proprietary enterprise architecture and connects via 2-way sync to major real estate CRMs (e.g., Follow Up Boss, kvCORE, Salesforce, BoomTown). All call transcripts, recordings, lead status updates, and calendar bookings sync instantly across your stack.",
+    a: "Your voice agent is wired straight into your CRM. We build your pipeline stages, follow-up sequences, and tagging around it, so every call's budget, timeline, and motivation are logged to the lead's record and every booked appointment lands on your calendar.",
   },
   {
     q: "Does the AI sound like a robotic automated phone system?",
@@ -18,7 +18,7 @@ const faqs = [
 
   {
     q: "How fast can our team go live?",
-    a: "Standard Team setups launch within 10–14 business days. Enterprise Brokerage implementations typically deploy within 21–30 days, depending on custom MLS data integration and sub-account scale.",
+    a: "Most agents are live and taking calls within 10–14 days of kickoff, with a monthly performance report from day one.",
   },
 ];
 

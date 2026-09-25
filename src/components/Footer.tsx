@@ -3,9 +3,10 @@ import { Linkedin, Mail, MapPin } from "lucide-react";
 
 const footerLinks = {
   Solutions: [
-    "Speed-to-Lead Voice AI",
-    "Database Reactivation",
-    "Front-Desk Voice Concierge",
+    "24/7 AI Call Answering",
+    "Missed-Call Text-Back",
+    "Appointment Booking",
+    "Live Warm Transfer",
   ],
   Company: ["About", "Use Cases", "Comparison", "Pricing", "Virtexa Connect"],
   Resources: ["System Audit", "Live Demo", "FAQ", "Documentation"],

@@ -56,10 +56,10 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
             >
-              Virtexa deploys custom, human-grade AI voice agents and autonomous
-              operating systems for real estate teams and brokerages. Qualify
-              leads under 5 seconds, answer every call 24/7, and reactivate
-              dormant databases on autopilot.
+              Virtexa builds and runs a dedicated, human-grade AI voice agent
+              for every phone line in your business. Answer every call 24/7,
+              qualify and book leads on the spot, and follow up automatically,
+              wired straight into your CRM.
             </motion.p>
 
             <motion.p
