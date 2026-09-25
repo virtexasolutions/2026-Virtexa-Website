@@ -8,7 +8,7 @@ const SITE_URL = "https://virtexasolutions.com";
 const PAGE_URL = `${SITE_URL}/founders`;
 const PAGE_TITLE = "Our Founders | Virtexa Solutions";
 const PAGE_DESCRIPTION =
-  "Meet Rikki Carodine and Diamond Carter, the co-founders behind Virtexa Solutions, building AI voice agents and automation systems for real estate teams and small businesses.";
+  "Meet Rikki Carodine, founder, and Diamond Carter, co-founder, of Virtexa Solutions, building AI voice agents and automation systems for real estate teams and small businesses.";
 
 type Founder = {
   name: string;
@@ -23,12 +23,12 @@ const founders: Founder[] = [
   {
     name: "Rikki Carodine",
     initials: "RC",
-    title: "Co-Founder & Fractional COO",
+    title: "Founder & Fractional COO",
     tagline: "AI Systems Architect",
     linkedin: "https://www.linkedin.com/in/rikki-carodine",
     bio: [
-      "Rikki Carodine is the co-founder and Fractional COO of Virtexa Solutions, where Rikki architects the AI systems that help real estate teams and small businesses respond to every lead, work their databases, and scale without adding headcount.",
-      "Rikki has been building in the digital space since 2017, across web design, digital marketing, automation, and brand storytelling. With credentials in digital marketing and UX design, Rikki brings together the operational thinking of a COO, the technical depth of a systems architect, and a designer's understanding of how people actually experience technology.",
+      "Rikki Carodine is the founder and Fractional COO of Virtexa Solutions, where Rikki architects the AI systems that help real estate teams and small businesses respond to every lead, work their databases, and scale without adding headcount.",
+      "Rikki has been building in the digital space since 2017, across web design, digital marketing, automation, and brand storytelling. Certified in digital marketing and UX design, Rikki brings together the operational thinking of a COO, the technical depth of a systems architect, and a designer's understanding of how people actually experience technology.",
       "That perspective shapes how Virtexa works. Rikki believes the best digital experiences happen where strategy, psychology, and creativity meet authenticity, so every Virtexa system is designed around the people who use it and the clients it serves, not just the software behind it.",
     ],
   },
@@ -39,7 +39,7 @@ const founders: Founder[] = [
     tagline: "Realtor · Hampton Roads & Augusta",
     linkedin: "https://www.linkedin.com/in/realtordiamondcarter/",
     bio: [
-      "Diamond Carter is a co-founder of Virtexa Solutions and a practicing Realtor with Mikel Realty Inc., brokered by Keller Williams Coastal Virginia, specializing in luxury homes, military relocation, and investment properties across Hampton Roads and Augusta.",
+      "Diamond Carter is the co-founder of Virtexa Solutions and a practicing Realtor specializing in luxury homes, military relocation, and investment properties across Hampton Roads and Augusta.",
       "Diamond's approach is thoughtful, polished, and relationship-driven, with a strong emphasis on communication, discretion, and strategic guidance at every stage of a transaction. Georgia-rooted and Coastal Virginia-focused, and the child of two Army veterans, Diamond brings a personal understanding of the transitions military and civilian families face when relocating, investing, or stepping into a new season of life.",
       "That frontline experience is why Virtexa's systems work in the real world. Diamond knows firsthand what a missed call, a slow follow-up, or a cold database costs an agent, and makes sure every Virtexa AI voice agent reflects the care, responsiveness, and professionalism clients expect from a trusted Realtor.",
     ],
