@@ -416,6 +416,31 @@ function ChatBookingWidget({
 
           {error && <p className="text-[10px] text-red-400">{error}</p>}
 
+          <p className="text-[9px] leading-snug text-muted-foreground">
+            By booking, you agree to our{" "}
+            <a
+              href="/terms"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-foreground"
+            >
+              Terms
+            </a>{" "}
+            and{" "}
+            <a
+              href="/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-foreground"
+            >
+              Privacy Policy
+            </a>
+            , and to receive calls and texts from Virtexa about your
+            appointment, including automated messages. Consent is not a
+            condition of purchase. Msg &amp; data rates may apply. Reply STOP to
+            opt out.
+          </p>
+
           <button
             type="submit"
             disabled={submitting}

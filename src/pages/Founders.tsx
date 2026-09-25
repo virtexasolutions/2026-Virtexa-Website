@@ -1,10 +1,9 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Linkedin } from "lucide-react";
+import { Calendar, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
+import SubpageHeader from "@/components/SubpageHeader";
+import { SITE_URL, usePageSeo } from "@/lib/usePageSeo";
 
-const SITE_URL = "https://virtexasolutions.com";
 const PAGE_URL = `${SITE_URL}/founders`;
 const COMPANY_LINKEDIN = "https://www.linkedin.com/company/virtexa-solutions/";
 const PAGE_TITLE = "Our Founders | Virtexa Solutions";
@@ -87,104 +86,17 @@ const structuredData = {
   },
 };
 
-function setMeta(selector: string, attr: string, key: string, value: string) {
-  let el = document.head.querySelector<HTMLElement>(selector);
-  const previous = el?.getAttribute(attr === "href" ? "href" : "content");
-  if (!el) {
-    el = document.createElement(selector.startsWith("link") ? "link" : "meta");
-    const [name, keyValue] = key.split("=");
-    el.setAttribute(name, keyValue);
-    document.head.appendChild(el);
-  }
-  el.setAttribute(attr, value);
-  return () => {
-    if (previous != null) el!.setAttribute(attr, previous);
-  };
-}
-
-function usePageSeo() {
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = PAGE_TITLE;
-
-    const restores = [
-      setMeta(
-        'meta[name="description"]',
-        "content",
-        "name=description",
-        PAGE_DESCRIPTION,
-      ),
-      setMeta('link[rel="canonical"]', "href", "rel=canonical", PAGE_URL),
-      setMeta(
-        'meta[property="og:title"]',
-        "content",
-        "property=og:title",
-        PAGE_TITLE,
-      ),
-      setMeta(
-        'meta[property="og:description"]',
-        "content",
-        "property=og:description",
-        PAGE_DESCRIPTION,
-      ),
-      setMeta(
-        'meta[property="og:url"]',
-        "content",
-        "property=og:url",
-        PAGE_URL,
-      ),
-      setMeta(
-        'meta[name="twitter:title"]',
-        "content",
-        "name=twitter:title",
-        PAGE_TITLE,
-      ),
-      setMeta(
-        'meta[name="twitter:description"]',
-        "content",
-        "name=twitter:description",
-        PAGE_DESCRIPTION,
-      ),
-    ];
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.text = JSON.stringify(structuredData);
-    document.head.appendChild(script);
-
-    window.scrollTo(0, 0);
-
-    return () => {
-      document.title = previousTitle;
-      restores.forEach((restore) => restore());
-      script.remove();
-    };
-  }, []);
-}
-
 export default function Founders() {
-  usePageSeo();
+  usePageSeo({
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    path: "/founders",
+    structuredData,
+  });
 
   return (
     <div className="relative min-h-screen bg-background">
-      <header className="container mx-auto px-4 py-4">
-        <div className="glass flex items-center justify-between rounded-2xl px-4 py-2.5">
-          <Link
-            to="/"
-            className="text-lg font-bold tracking-tight"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            Virtexa
-          </Link>
-          <Link
-            to="/"
-            className="flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-[hsl(28,40%,76%)]"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to home
-          </Link>
-        </div>
-      </header>
+      <SubpageHeader />
 
       <main>
         <section className="relative overflow-hidden pt-16 pb-12 lg:pt-24">
