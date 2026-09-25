@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "Does the AI sound like a robotic automated phone system?",
-    a: "No. Virtexa deploys natural language processing voice models with sub-800ms latency, human-like cadence, natural inflection, and interruption handling. Most leads assume they are speaking with a live in-house ISA or assistant.",
+    a: "No. Every Virtexa agent is custom-scripted for your business and tested against real call scenarios before it goes live, so it sounds like your team, not a generic bot. And when a caller asks for a person, the agent warm-transfers them to you in real time.",
   },
 
   {

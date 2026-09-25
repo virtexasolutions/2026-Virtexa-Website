@@ -23,10 +23,10 @@ interface Message {
 
 const quickPrompts = [
   "Book an audit",
+  "What's included?",
+  "Which plan fits me?",
   "How fast can we go live?",
   "Does the AI sound robotic?",
-  "How does pricing work?",
-  "CRM integrations?",
 ];
 
 const CALENDAR_ID = "lGWutJTLLOiszDqfKUfG";
@@ -508,6 +508,42 @@ async function getBotResponseAsync(
     };
   }
   if (
+    q.includes("include") ||
+    q.includes("feature") ||
+    q.includes("offer") ||
+    q.includes("what do you do")
+  ) {
+    return {
+      text: "Every Virtexa plan includes the same six-part core build: 24/7 AI call answering, live lead qualification (budget, timeline, and motivation logged to your CRM), instant missed-call text-back, showing and appointment booking, a pipeline and follow-up automation build, and live warm transfer for hot leads.",
+    };
+  }
+  if (
+    q.includes("which plan") ||
+    q.includes("solo") ||
+    q.includes("team") ||
+    q.includes("fit")
+  ) {
+    return {
+      text: "Solo Agent covers a single agent or small team getting their first line answered. Team is for 2–4 agents on shared lines, with a shared reporting dashboard and coordinated rollout. Brokerage is for 5+ agents or multi-office operations, with a dedicated onboarding specialist and success manager. Book a System Audit and we'll recommend the right fit:",
+      showBookingWidget: true,
+    };
+  }
+  if (q.includes("text") || q.includes("sms") || q.includes("missed")) {
+    return {
+      text: "When a call is missed, the lead gets a text reply within seconds, before they have a chance to call the next listing agent.",
+    };
+  }
+  if (q.includes("transfer") || q.includes("person")) {
+    return {
+      text: "When a hot lead asks for a person, your Virtexa agent warm-transfers the call to you in real time. No voicemail, no lost momentum.",
+    };
+  }
+  if (q.includes("qualif")) {
+    return {
+      text: "On every call, your agent captures the lead's budget, timeline, and motivation and logs it straight to the CRM record, so you know who to call first.",
+    };
+  }
+  if (
     q.includes("price") ||
     q.includes("cost") ||
     q.includes("tier") ||
@@ -539,7 +575,7 @@ async function getBotResponseAsync(
     q.includes("human")
   ) {
     return {
-      text: "Not at all. Virtexa voice agents feature sub-800ms latency, natural inflection, custom cadence, and real-time interruption handling. Most leads assume they are talking to a human in-house ISA. Check out the interactive phone simulator in our Hero section to hear it live!",
+      text: "Not at all. Every Virtexa agent is custom-scripted for your business and tested against real call scenarios before it goes live, so it sounds like your team, not a generic bot. And when a caller asks for a person, the agent warm-transfers them to you in real time. Try the phone simulator at the top of the page to hear it live!",
     };
   }
   if (
@@ -604,7 +640,7 @@ async function getBotResponseAsync(
     };
   }
   return {
-    text: "I can answer questions regarding our AI voice agents, CRM integrations, deployment timelines, or schedule a 30-minute System Audit for your team right now. Would you like to select an audit date?",
+    text: "I can answer questions about what's included, our three plans (Solo Agent, Team, and Brokerage), and go-live timelines, or schedule a 30-minute System Audit for your team right now. Would you like to select an audit date?",
     showBookingWidget: true,
   };
 }

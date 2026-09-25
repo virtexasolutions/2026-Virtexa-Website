@@ -104,11 +104,11 @@ export default function Hero() {
             >
               <div className="flex items-center gap-1.5">
                 <ShieldCheck className="h-4 w-4 text-[hsl(150,40%,50%)]" />
-                Sub-800ms latency
+                Answers in under 2 rings
               </div>
               <div className="flex items-center gap-1.5">
                 <ShieldCheck className="h-4 w-4 text-[hsl(150,40%,50%)]" />
-                2-way CRM sync
+                Live warm transfer
               </div>
               <div className="hidden items-center gap-1.5 sm:flex">
                 <ArrowRight className="h-4 w-4 text-[hsl(21,38%,64%)]" />
