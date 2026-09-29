@@ -69,8 +69,22 @@ draft: true # optional, hides the post
 Post body in Markdown. Use `##` for section headings (the title is the page's only `#`).
 ```
 
-`npm run build` prerenders `/blog` and every post to static HTML with its own
-title, meta description, canonical URL, Open Graph tags, and `BlogPosting`
-structured data. It also adds the blog URLs to `sitemap.xml` and writes an RSS
-feed to `/blog/rss.xml`. `npm run test` checks every post's metadata and
-internal `/blog/...` links.
+Posts are prerendered and added to the sitemap automatically (see below), and
+an RSS feed is written to `/blog/rss.xml`.
+
+## Pages and SEO
+
+`npm run build` runs two steps: the normal browser build, then a server build of
+`src/entry-server.tsx` whose plugin (`vite-plugin-prerender.ts`) renders every
+page to static HTML in `dist/`. Each page ships with its full content, title,
+meta description, canonical URL, social tags and JSON-LD structured data, so
+search engines and link previews don't need to run JavaScript. The build also
+writes `dist/sitemap.xml` and `dist/404.html` (served by Vercel for unknown
+URLs, with a real 404 status).
+
+- Every page sets its SEO tags with `usePageSeo` (`src/lib/usePageSeo.ts`).
+- Every public page is listed in `src/lib/routes.ts`. A new page needs a route
+  in `src/App.tsx` and an entry there, or it will 404 in production.
+- Service pages (`/solutions/<slug>`) are data in `src/lib/solutions.ts`.
+- `npm run test` renders every page and checks that each has a unique title and
+  description, and that every internal link and `#section` link exists.

@@ -12,7 +12,7 @@ This article explains why response time has such an outsized effect on your resu
 
 ## Why the first response matters so much
 
-Think about how buyers and sellers actually shop for an agent today. A buyer sees a home they like online and submits an inquiry, or calls the number on a yard sign. A seller searches for local agents and contacts a few of them. In both cases, the person is actively interested **right now**, and they are often talking to more than one agent.
+Think about how buyers and sellers actually shop for an agent today. A buyer sees a home they like online and submits an inquiry, or calls the number on a yard sign. A seller searches for local agents and contacts a few of them. In both cases, the person is actively interested **right now**, and if you are not available, another agent is only a call or a click away.
 
 When you respond quickly, three things work in your favor:
 
@@ -21,6 +21,17 @@ When you respond quickly, three things work in your favor:
 - **You avoid the silence.** Many people will not wait for a callback. If no one answers, they call the next agent.
 
 A lead that sits for hours is not the same lead it was when it first came in. Its intent has cooled, and it may already belong to someone else.
+
+## What the research says
+
+Two findings help explain why the first response carries so much weight:
+
+- **Fast responses convert far better.** In its 2021 lead response research, InsideSales reviewed more than 55 million sales activities on 5.7 million inbound leads at over 400 companies. Leads contacted within the first 5 minutes converted at more than 8x the rate of leads contacted between 5 minutes and 24 hours later. ([InsideSales](https://www.insidesales.com/response-time-matters/))
+- **Most buyers choose the first agent they seriously talk to.** According to the National Association of Realtors' 2025 Profile of Home Buyers and Sellers, most buyers interviewed only one agent before deciding who to work with: 67% of first-time buyers and 76% of repeat buyers. ([NAR 2025 findings](https://nowbam.com/88-of-home-buyers-still-rely-on-agents-nar-2025-report-finds/))
+
+Both come with caveats. The InsideSales data covers inbound sales leads across industries, not real estate specifically. And NAR also finds that most buyers found their agent through a referral from someone they trusted, not through an ad or a lead form, so its finding is about buyers not shopping around rather than about response speed.
+
+Taken together, though, the lesson is the same: when someone reaches out, the conversation you have first often decides whether you get a second one. That is true for a portal inquiry and even more so for a referral, where the person contacting you has already been told you are the agent to call.
 
 ## Where response time gets lost
 

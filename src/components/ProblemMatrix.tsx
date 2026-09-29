@@ -15,11 +15,28 @@ const virtexaWay = [
   "Zero-management custom Virtexa OS",
 ];
 
-const problems = [
+type Problem = {
+  icon: typeof Clock;
+  title: string;
+  text: string;
+  sources?: { label: string; href: string }[];
+};
+
+const problems: Problem[] = [
   {
     icon: Clock,
     title: "Speed-to-Lead Decay",
-    text: "Over 78% of real estate buyers and sellers sign with the first agent who speaks to them. A 10-minute delay in answering a yard sign or Zillow inquiry drops conversion rates by 800%.",
+    text: "In a study of 5.7 million inbound sales leads, leads contacted within 5 minutes converted at 8x the rate of leads contacted later. And most home buyers interview only one agent before choosing, so there is rarely a second chance to make a first impression.",
+    sources: [
+      {
+        label: "InsideSales, 2021",
+        href: "https://www.insidesales.com/response-time-matters/",
+      },
+      {
+        label: "NAR 2025 Profile of Home Buyers and Sellers",
+        href: "https://nowbam.com/88-of-home-buyers-still-rely-on-agents-nar-2025-report-finds/",
+      },
+    ],
   },
   {
     icon: Database,
@@ -35,7 +52,7 @@ const problems = [
 
 export default function ProblemMatrix() {
   return (
-    <section className="relative overflow-x-clip py-20 lg:py-28">
+    <section id="use-cases" className="relative overflow-x-clip py-20 lg:py-28">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-[hsl(28,40%,76%)]">
@@ -145,6 +162,24 @@ export default function ProblemMatrix() {
               <p className="text-sm leading-relaxed text-muted-foreground">
                 {problem.text}
               </p>
+              {problem.sources && (
+                <p className="mt-3 text-xs text-muted-foreground">
+                  Sources:{" "}
+                  {problem.sources.map((source, j) => (
+                    <span key={source.href}>
+                      {j > 0 && "; "}
+                      <a
+                        href={source.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline underline-offset-2 hover:text-[hsl(28,40%,76%)]"
+                      >
+                        {source.label}
+                      </a>
+                    </span>
+                  ))}
+                </p>
+              )}
             </motion.div>
           ))}
         </div>
