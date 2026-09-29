@@ -1,12 +1,15 @@
 import { useEffect } from "react";
+import { SITE_URL } from "@/lib/blog-core";
 
-export const SITE_URL = "https://virtexasolutions.com";
+export { SITE_URL };
 
 type PageSeo = {
   title: string;
   description: string;
   path: string;
   structuredData?: object;
+  /** Open Graph type; defaults to "website". */
+  type?: "website" | "article";
 };
 
 function setMeta(selector: string, attr: string, key: string, value: string) {
@@ -35,6 +38,7 @@ export function usePageSeo({
   description,
   path,
   structuredData,
+  type = "website",
 }: PageSeo) {
   useEffect(() => {
     const url = `${SITE_URL}${path}`;
@@ -62,6 +66,7 @@ export function usePageSeo({
         description,
       ),
       setMeta('meta[property="og:url"]', "content", "property=og:url", url),
+      setMeta('meta[property="og:type"]', "content", "property=og:type", type),
       setMeta(
         'meta[name="twitter:title"]',
         "content",
@@ -91,5 +96,5 @@ export function usePageSeo({
       restores.forEach((restore) => restore());
       script?.remove();
     };
-  }, [title, description, path, structuredData]);
+  }, [title, description, path, structuredData, type]);
 }

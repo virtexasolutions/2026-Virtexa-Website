@@ -221,3 +221,55 @@
     }
   }
 }
+
+/* Long-form blog article body, rendered from Markdown (src/content/blog). */
+@layer components {
+  .blog-prose {
+    @apply text-base leading-relaxed text-muted-foreground sm:text-lg;
+  }
+  .blog-prose > * + * {
+    @apply mt-5;
+  }
+  .blog-prose h2 {
+    @apply mt-12 text-2xl font-bold tracking-tight text-foreground sm:text-3xl;
+    font-family: "Playfair Display", serif;
+  }
+  .blog-prose h3 {
+    @apply mt-8 text-xl font-semibold text-foreground;
+  }
+  .blog-prose strong {
+    @apply font-semibold text-foreground;
+  }
+  .blog-prose a {
+    @apply text-[hsl(28,40%,76%)] underline underline-offset-2 hover:text-foreground;
+  }
+  .blog-prose ul {
+    @apply list-disc space-y-2 pl-6 marker:text-[hsl(21,38%,64%)];
+  }
+  .blog-prose ol {
+    @apply list-decimal space-y-2 pl-6 marker:text-[hsl(21,38%,64%)];
+  }
+  .blog-prose blockquote {
+    @apply border-l-2 border-[hsl(21,38%,64%)] pl-5 italic text-foreground/90;
+  }
+  .blog-prose code {
+    @apply rounded bg-[hsl(30,12%,14%)] px-1.5 py-0.5 text-sm text-foreground;
+    font-family: "JetBrains Mono", monospace;
+  }
+  .blog-prose hr {
+    @apply my-10 border-[hsl(30,10%,22%)];
+  }
+  .blog-prose table {
+    @apply block w-full max-w-full border-collapse overflow-x-auto text-sm;
+  }
+  .blog-prose th,
+  .blog-prose td {
+    @apply border border-[hsl(30,10%,22%)] px-3 py-2 text-left;
+  }
+  .blog-prose th {
+    @apply bg-[hsl(30,12%,14%)] font-semibold text-foreground;
+  }
+  .blog-prose img {
+    @apply rounded-2xl;
+  }
+}

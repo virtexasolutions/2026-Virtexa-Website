@@ -108,6 +108,12 @@ export default function Footer() {
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-xs text-muted-foreground">
             <Link
+              to="/blog"
+              className="transition-colors hover:text-[hsl(28,40%,76%)]"
+            >
+              Blog
+            </Link>
+            <Link
               to="/founders"
               className="transition-colors hover:text-[hsl(28,40%,76%)]"
             >
