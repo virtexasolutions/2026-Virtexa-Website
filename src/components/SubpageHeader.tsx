@@ -12,13 +12,21 @@ export default function SubpageHeader() {
         >
           Virtexa
         </Link>
-        <Link
-          to="/"
-          className="flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-[hsl(28,40%,76%)]"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Back to home
-        </Link>
+        <div className="flex items-center gap-5">
+          <Link
+            to="/blog"
+            className="text-sm text-muted-foreground transition-colors hover:text-[hsl(28,40%,76%)]"
+          >
+            Blog
+          </Link>
+          <Link
+            to="/"
+            className="flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-[hsl(28,40%,76%)]"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to home
+          </Link>
+        </div>
       </div>
     </header>
   );

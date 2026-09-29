@@ -1,14 +1,23 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const navLinks = [
+type NavItem = {
+  label: string;
+  href: string;
+  external?: boolean;
+  route?: boolean;
+};
+
+const navLinks: NavItem[] = [
   { label: "Solutions", href: "#solutions" },
   { label: "Use Cases", href: "#use-cases" },
   { label: "Comparison", href: "#comparison" },
   { label: "Pricing", href: "#pricing" },
+  { label: "Blog", href: "/blog", route: true },
   {
     label: "Virtexa Connect",
     href: "https://connect.virtexasolutions.com/",
@@ -58,7 +67,15 @@ export default function Header() {
           {/* Desktop nav */}
           <nav className="hidden items-center gap-1 md:flex">
             {navLinks.map((link) =>
-              link.external ? (
+              link.route ? (
+                <Link
+                  key={link.label}
+                  to={link.href}
+                  className="rounded-lg px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hover:bg-white/5"
+                >
+                  {link.label}
+                </Link>
+              ) : link.external ? (
                 <a
                   key={link.label}
                   href={link.href}
@@ -117,7 +134,15 @@ export default function Header() {
             >
               <div className="glass-strong mt-2 flex flex-col gap-1 rounded-2xl p-3">
                 {navLinks.map((link) =>
-                  link.external ? (
+                  link.route ? (
+                    <Link
+                      key={link.label}
+                      to={link.href}
+                      className="rounded-lg px-4 py-3 text-left text-sm font-medium text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : link.external ? (
                     <a
                       key={link.label}
                       href={link.href}

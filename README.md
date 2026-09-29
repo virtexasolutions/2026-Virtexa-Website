@@ -45,3 +45,32 @@ npx tsc --noEmit
 ## Lockfile policy
 
 This repository does not track `package-lock.json`.
+
+## Blog
+
+Blog posts live in `src/content/blog` as Markdown files. Each file becomes a
+page at `/blog/<slug>`, where the slug is the file name without its date
+prefix (`2026-09-29-my-post.md` becomes `/blog/my-post`).
+
+Start each post with frontmatter:
+
+```md
+---
+title: Speed to Lead in Real Estate: Why the First Response Wins
+description: One or two sentences for search results and link previews (aim for under 160 characters).
+date: 2026-09-29
+updated: 2026-10-15 # optional, when the post was last meaningfully revised
+author: Virtexa Solutions # optional, defaults to Virtexa Solutions
+tags: [Lead Response, Real Estate]
+image: https://example.com/share-image.png # optional social share image
+draft: true # optional, hides the post
+---
+
+Post body in Markdown. Use `##` for section headings (the title is the page's only `#`).
+```
+
+`npm run build` prerenders `/blog` and every post to static HTML with its own
+title, meta description, canonical URL, Open Graph tags, and `BlogPosting`
+structured data. It also adds the blog URLs to `sitemap.xml` and writes an RSS
+feed to `/blog/rss.xml`. `npm run test` checks every post's metadata and
+internal `/blog/...` links.
