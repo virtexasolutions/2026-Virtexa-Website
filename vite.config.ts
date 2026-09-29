@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "@leadconnector/vibe-tagger";
-import blogPlugin from "./vite-plugin-blog";
+import prerenderPlugin from "./vite-plugin-prerender";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    blogPlugin(),
+    prerenderPlugin(),
     mode === "development" && componentTagger({ tailwindConfig: true }),
   ].filter(Boolean),
   resolve: {

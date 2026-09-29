@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Phone,
   ClipboardCheck,
@@ -6,12 +7,14 @@ import {
   CalendarCheck,
   Workflow,
   PhoneForwarded,
+  ArrowRight,
 } from "lucide-react";
 
 const included = [
   {
     icon: Phone,
     title: "24/7 AI Call Answering",
+    href: "/solutions/ai-call-answering",
     text: "Every inbound call picked up in under two rings — nights, weekends, and holidays included.",
   },
   {
@@ -22,11 +25,13 @@ const included = [
   {
     icon: MessageSquareText,
     title: "Instant Missed-Call Text-Back",
+    href: "/solutions/missed-call-text-back",
     text: "A missed call gets a text reply within seconds — before the lead has a chance to call the next listing agent.",
   },
   {
     icon: CalendarCheck,
     title: "Showing & Appointment Booking",
+    href: "/solutions/appointment-booking",
     text: "Leads book directly onto your calendar in real time, synced to who's actually available.",
   },
   {
@@ -37,6 +42,7 @@ const included = [
   {
     icon: PhoneForwarded,
     title: "Live Warm Transfer",
+    href: "/solutions/live-warm-transfer",
     text: "A hot lead asking for a person gets transferred in real time — no voicemail, no lost momentum.",
   },
 ];
@@ -84,6 +90,16 @@ export default function OfferEcosystem() {
               <p className="text-sm leading-relaxed text-muted-foreground">
                 {item.text}
               </p>
+              {item.href && (
+                <Link
+                  to={item.href}
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[hsl(28,40%,76%)] hover:text-foreground"
+                >
+                  Learn more
+                  <span className="sr-only"> about {item.title}</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              )}
             </motion.div>
           ))}
         </div>

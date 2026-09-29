@@ -3,14 +3,28 @@ import { SITE_URL } from "@/lib/blog-core";
 
 export { SITE_URL };
 
-type PageSeo = {
+export type PageSeo = {
   title: string;
   description: string;
   path: string;
   structuredData?: object;
   /** Open Graph type; defaults to "website". */
   type?: "website" | "article";
+  /** Absolute or root-relative social share image. */
+  image?: string;
+  /** Ask search engines not to index the page (e.g. the 404 page). */
+  noindex?: boolean;
 };
+
+// During the build-time prerender (src/entry-server.tsx), effects never run,
+// so the page's SEO settings are recorded here during render instead.
+let renderedSeo: PageSeo | undefined;
+
+export function takeRenderedSeo() {
+  const seo = renderedSeo;
+  renderedSeo = undefined;
+  return seo;
+}
 
 function setMeta(selector: string, attr: string, key: string, value: string) {
   let el = document.head.querySelector<HTMLElement>(selector);
@@ -25,25 +39,38 @@ function setMeta(selector: string, attr: string, key: string, value: string) {
   target.setAttribute(attr, value);
   return () => {
     if (previous != null) target.setAttribute(attr, previous);
+    else target.remove();
   };
 }
 
 /**
- * Sets the page title, description, canonical URL and social tags for a
- * client-rendered route, optionally injecting JSON-LD structured data, and
- * restores the defaults from index.html on unmount.
+ * Sets the page title, description, canonical URL and social tags for a route,
+ * optionally injecting JSON-LD structured data, and restores the previous
+ * values on unmount. The same settings are baked into the prerendered HTML.
  */
-export function usePageSeo({
-  title,
-  description,
-  path,
-  structuredData,
-  type = "website",
-}: PageSeo) {
+export function usePageSeo(seo: PageSeo) {
+  if (import.meta.env.SSR) renderedSeo = seo;
+
+  const {
+    title,
+    description,
+    path,
+    structuredData,
+    type = "website",
+    image,
+    noindex = false,
+  } = seo;
+
   useEffect(() => {
     const url = `${SITE_URL}${path}`;
     const previousTitle = document.title;
     document.title = title;
+
+    // The prerendered HTML already carries this page's JSON-LD; drop it so it
+    // is not duplicated below or left behind after client-side navigation.
+    document.head
+      .querySelectorAll("script[data-prerendered]")
+      .forEach((el) => el.remove());
 
     const restores = [
       setMeta(
@@ -52,7 +79,6 @@ export function usePageSeo({
         "name=description",
         description,
       ),
-      setMeta('link[rel="canonical"]', "href", "rel=canonical", url),
       setMeta(
         'meta[property="og:title"]',
         "content",
@@ -80,6 +106,38 @@ export function usePageSeo({
         description,
       ),
     ];
+    if (image) {
+      const imageUrl = /^https?:\/\//.test(image) ? image : SITE_URL + image;
+      restores.push(
+        setMeta(
+          'meta[property="og:image"]',
+          "content",
+          "property=og:image",
+          imageUrl,
+        ),
+        setMeta(
+          'meta[name="twitter:image"]',
+          "content",
+          "name=twitter:image",
+          imageUrl,
+        ),
+      );
+    }
+    // A noindex page (the 404 page) must not declare a canonical URL.
+    const canonical = document.head.querySelector('link[rel="canonical"]');
+    if (noindex) {
+      canonical?.remove();
+      restores.push(
+        setMeta('meta[name="robots"]', "content", "name=robots", "noindex"),
+        () => {
+          if (canonical) document.head.appendChild(canonical);
+        },
+      );
+    } else {
+      restores.push(
+        setMeta('link[rel="canonical"]', "href", "rel=canonical", url),
+      );
+    }
 
     let script: HTMLScriptElement | undefined;
     if (structuredData) {
@@ -89,12 +147,15 @@ export function usePageSeo({
       document.head.appendChild(script);
     }
 
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    // Start each page at the top, unless the URL targets a section.
+    if (!window.location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
 
     return () => {
       document.title = previousTitle;
       restores.forEach((restore) => restore());
       script?.remove();
     };
-  }, [title, description, path, structuredData, type]);
+  }, [title, description, path, structuredData, type, image, noindex]);
 }

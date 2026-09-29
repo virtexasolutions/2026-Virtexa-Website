@@ -1,15 +1,35 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Mail, MapPin } from "lucide-react";
 
-const footerLinks = {
+type FooterLink = { label: string; href: string; external?: boolean };
+
+const footerLinks: Record<string, FooterLink[]> = {
   Solutions: [
-    "24/7 AI Call Answering",
-    "Missed-Call Text-Back",
-    "Appointment Booking",
-    "Live Warm Transfer",
+    { label: "24/7 AI Call Answering", href: "/solutions/ai-call-answering" },
+    {
+      label: "Missed-Call Text-Back",
+      href: "/solutions/missed-call-text-back",
+    },
+    { label: "Appointment Booking", href: "/solutions/appointment-booking" },
+    { label: "Live Warm Transfer", href: "/solutions/live-warm-transfer" },
   ],
-  Company: ["About", "Use Cases", "Comparison", "Pricing", "Virtexa Connect"],
-  Resources: ["System Audit", "Live Demo", "FAQ"],
+  Company: [
+    { label: "About", href: "/founders" },
+    { label: "Use Cases", href: "/#use-cases" },
+    { label: "Comparison", href: "/#comparison" },
+    { label: "Pricing", href: "/#pricing" },
+    {
+      label: "Virtexa Connect",
+      href: "https://connect.virtexasolutions.com/",
+      external: true,
+    },
+  ],
+  Resources: [
+    { label: "Blog", href: "/blog" },
+    { label: "System Audit", href: "/#audit" },
+    { label: "Live Demo", href: "/#audio-demo" },
+    { label: "FAQ", href: "/#faq" },
+  ],
 };
 
 export default function Footer() {
@@ -19,7 +39,7 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
           {/* Brand */}
           <div>
-            <a href="#top" className="flex items-center gap-2.5">
+            <Link to="/" className="flex items-center gap-2.5">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(21,38%,64%)] to-[hsl(28,35%,72%)]">
                 <svg
                   viewBox="0 0 24 24"
@@ -42,7 +62,7 @@ export default function Footer() {
               >
                 Virtexa Solutions
               </span>
-            </a>
+            </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               Custom, human-grade AI voice agents and autonomous operating
               systems for real estate teams and brokerages.{" "}
@@ -78,25 +98,27 @@ export default function Footer() {
                 {title}
               </h4>
               <ul className="space-y-2.5">
-                {links.map((link) => {
-                  const isConnect = link === "Virtexa Connect";
-                  return (
-                    <li key={link}>
+                {links.map((link) => (
+                  <li key={link.label}>
+                    {link.external || link.href.includes("#") ? (
                       <a
-                        href={
-                          isConnect
-                            ? "https://connect.virtexasolutions.com/"
-                            : "#"
-                        }
-                        target={isConnect ? "_blank" : undefined}
-                        rel={isConnect ? "noopener noreferrer" : undefined}
+                        href={link.href}
+                        target={link.external ? "_blank" : undefined}
+                        rel={link.external ? "noopener noreferrer" : undefined}
                         className="text-sm text-muted-foreground transition-colors hover:text-[hsl(28,40%,76%)]"
                       >
-                        {link}
+                        {link.label}
                       </a>
-                    </li>
-                  );
-                })}
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="text-sm text-muted-foreground transition-colors hover:text-[hsl(28,40%,76%)]"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
               </ul>
             </div>
           ))}
@@ -107,12 +129,6 @@ export default function Footer() {
             © {new Date().getFullYear()} Virtexa Solutions. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-xs text-muted-foreground">
-            <Link
-              to="/blog"
-              className="transition-colors hover:text-[hsl(28,40%,76%)]"
-            >
-              Blog
-            </Link>
             <Link
               to="/founders"
               className="transition-colors hover:text-[hsl(28,40%,76%)]"
