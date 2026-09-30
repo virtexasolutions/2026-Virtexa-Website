@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { SITE_URL } from "@/lib/blog-core";
+import { ORGANIZATION_ID, SITE_URL } from "@/lib/blog-core";
 
-export { SITE_URL };
+export { ORGANIZATION_ID, SITE_URL };
 
 export type PageSeo = {
   title: string;

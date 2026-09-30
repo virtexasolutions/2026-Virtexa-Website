@@ -2,7 +2,7 @@ import { Calendar, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
 import SubpageHeader from "@/components/SubpageHeader";
-import { SITE_URL, usePageSeo } from "@/lib/usePageSeo";
+import { ORGANIZATION_ID, SITE_URL, usePageSeo } from "@/lib/usePageSeo";
 
 const PAGE_URL = `${SITE_URL}/founders`;
 const COMPANY_LINKEDIN = "https://www.linkedin.com/company/virtexa-solutions/";
@@ -73,6 +73,7 @@ const structuredData = {
   description: PAGE_DESCRIPTION,
   mainEntity: {
     "@type": "Organization",
+    "@id": ORGANIZATION_ID,
     name: "Virtexa Solutions",
     url: SITE_URL,
     sameAs: [COMPANY_LINKEDIN],
@@ -81,7 +82,7 @@ const structuredData = {
       name: f.name,
       jobTitle: f.tagline ? `${f.title}, ${f.tagline}` : f.title,
       sameAs: [f.linkedin],
-      worksFor: { "@type": "Organization", name: "Virtexa Solutions" },
+      worksFor: { "@id": ORGANIZATION_ID },
     })),
   },
 };

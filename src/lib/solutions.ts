@@ -84,8 +84,8 @@ export const solutions: Solution[] = [
   {
     slug: "missed-call-text-back",
     name: "Missed-Call Text-Back",
-    heading: "Missed-Call Text-Back for Real Estate Agents",
-    metaTitle: "Missed-Call Text-Back for Real Estate Agents | Virtexa",
+    heading: "Missed-Call Text-Back Service for Real Estate Agents",
+    metaTitle: "Missed-Call Text-Back Service for Real Estate | Virtexa",
     description:
       "When a call is missed, Virtexa texts the caller back within seconds, keeps the conversation going, and logs it to your CRM, so leads don't go to the next agent.",
     intro: [
