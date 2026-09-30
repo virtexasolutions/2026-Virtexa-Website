@@ -40,7 +40,11 @@ export default function FAQ() {
                 <AccordionTrigger className="text-left text-base font-medium hover:no-underline">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
+                {/* forceMount keeps closed answers in the HTML (hidden) so crawlers can read them. */}
+                <AccordionContent
+                  forceMount
+                  className="text-sm leading-relaxed text-muted-foreground"
+                >
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>

@@ -8,6 +8,11 @@ import { marked } from "marked";
 
 export const SITE_URL = "https://virtexasolutions.com";
 export const SITE_NAME = "Virtexa Solutions";
+/** Matches the Organization JSON-LD in index.html, so other nodes can reference it. */
+export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
+/** Default social share image, also set in index.html. */
+export const DEFAULT_SHARE_IMAGE =
+  "https://vibe.filesafe.space/1786492171864844998/assets/e6d17dca-ea97-4e9e-ae9d-abcc950255d0.png";
 export const BLOG_PATH = "/blog";
 export const BLOG_TITLE = "Blog | Virtexa Solutions";
 export const BLOG_DESCRIPTION =
@@ -27,6 +32,7 @@ export type BlogPost = {
   image?: string;
   draft: boolean;
   readingMinutes: number;
+  wordCount: number;
   html: string;
 };
 
@@ -97,6 +103,7 @@ export function parsePost(path: string, raw: string): BlogPost {
     image: str("image"),
     draft: str("draft") === "true",
     readingMinutes: Math.max(1, Math.round(words / 225)),
+    wordCount: words,
     html: marked.parse(body, { async: false }) as string,
   };
 }
@@ -137,6 +144,7 @@ export function formatPostDate(iso: string) {
 
 const publisher = {
   "@type": "Organization",
+  "@id": ORGANIZATION_ID,
   name: SITE_NAME,
   url: SITE_URL,
   logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon.svg` },
@@ -152,7 +160,8 @@ export function postStructuredData(post: BlogPost) {
         headline: post.title,
         description: post.description,
         url,
-        mainEntityOfPage: url,
+        mainEntityOfPage: { "@type": "WebPage", "@id": url },
+        inLanguage: "en-US",
         datePublished: post.date,
         dateModified: post.updated ?? post.date,
         author:
@@ -161,7 +170,8 @@ export function postStructuredData(post: BlogPost) {
             : { "@type": "Person", name: post.author },
         publisher,
         keywords: post.tags.join(", "),
-        ...(post.image ? { image: absoluteUrl(post.image) } : {}),
+        wordCount: post.wordCount,
+        image: absoluteUrl(post.image ?? DEFAULT_SHARE_IMAGE),
       },
       {
         "@type": "BreadcrumbList",

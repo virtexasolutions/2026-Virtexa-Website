@@ -67,6 +67,6 @@ If none of these apply, you may not need one yet. If several do, the calls you a
 
 ## How to get started
 
-The best starting point is not the technology. It is understanding how calls and leads flow through your business today: where they come from, who answers, what happens next, and where they get lost. Once that is clear, an AI voice agent can be designed around your actual process, connected to your CRM and calendar, and trained on your listings and scripts.
+The best starting point is not the technology. It is understanding how calls and leads flow through your business today: where they come from, who answers, what happens next, and where they get lost. Once that is clear, an AI voice agent can be designed around your actual process, connected to your CRM and calendar, and trained on your listings and scripts. That is how we build and run [Virtexa's AI voice agent for real estate](/) for agents, teams, and brokerages.
 
 That is exactly what our free **System Audit** covers. In 30 minutes, we map your current lead flow, identify where opportunities are slipping through, and show you what an AI voice agent built for your business would handle. [Book your System Audit](/#audit) to see where your pipeline is leaking.

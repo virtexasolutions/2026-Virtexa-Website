@@ -56,8 +56,9 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
             >
-              Virtexa builds and runs a dedicated, human-grade AI voice agent
-              for every phone line in your business. Answer every call 24/7,
+              Virtexa builds and runs a dedicated AI voice agent for real
+              estate, with a human-grade voice on every phone line in your
+              business. Answer every call 24/7,
               qualify and book leads on the spot, and follow up automatically,
               wired straight into your CRM.
             </motion.p>

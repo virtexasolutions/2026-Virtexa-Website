@@ -1,5 +1,13 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.virtexasolutions.com" }],
+      "destination": "https://virtexasolutions.com/:path*",
+      "statusCode": 301
+    }
+  ]
 }

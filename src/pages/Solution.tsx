@@ -11,7 +11,7 @@ import {
   solutions,
   type Solution as SolutionData,
 } from "@/lib/solutions";
-import { SITE_URL, usePageSeo } from "@/lib/usePageSeo";
+import { ORGANIZATION_ID, SITE_URL, usePageSeo } from "@/lib/usePageSeo";
 import NotFound from "./NotFound";
 
 export default function Solution() {
@@ -38,6 +38,7 @@ function structuredDataFor(solution: SolutionData) {
         areaServed: { "@type": "Country", name: "United States" },
         provider: {
           "@type": "Organization",
+          "@id": ORGANIZATION_ID,
           name: "Virtexa Solutions",
           url: SITE_URL,
         },

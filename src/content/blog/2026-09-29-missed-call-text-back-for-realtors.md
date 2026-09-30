@@ -65,6 +65,8 @@ A reputable provider will build these safeguards into the system for you.
 
 To set up missed-call text-back, you need a business phone number that can detect missed calls, a texting platform that is properly registered, and ideally a connection to your CRM so every conversation is saved. Many CRMs offer basic text-back, but the quality of the message, the follow-up logic, and the hand-off to you make the difference between a nice feature and a system that consistently saves leads.
 
+If you would rather not build it yourself, [Virtexa's missed-call text-back service](/solutions/missed-call-text-back) handles the setup for you: carrier registration, message writing, follow-up logic, and CRM wiring.
+
 ## See how many calls you are missing
 
 Most agents underestimate how many calls go unanswered, especially after hours. In our free 30-minute **System Audit**, we review how calls reach you today and show you how missed-call text-back and a 24/7 AI voice agent would work together for your business. [Book your System Audit](/#audit) to find out what you're missing.
