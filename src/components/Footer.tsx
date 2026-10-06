@@ -5,6 +5,7 @@ type FooterLink = { label: string; href: string; external?: boolean };
 
 const footerLinks: Record<string, FooterLink[]> = {
   Solutions: [
+    { label: "AI ISA", href: "/solutions/ai-isa" },
     { label: "24/7 AI Call Answering", href: "/solutions/ai-call-answering" },
     {
       label: "Missed-Call Text-Back",

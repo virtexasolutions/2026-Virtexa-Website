@@ -45,6 +45,12 @@ export default function Hero() {
               className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-[80px]"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
+              <span
+                className="mb-4 block text-lg font-semibold leading-snug tracking-normal text-[hsl(28,40%,76%)] sm:text-xl lg:text-2xl"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                AI Voice Agent for Real Estate Agents
+              </span>
               Stop Losing{" "}
               <span className="gradient-text">$15K Commissions</span> to Missed
               Calls & Cold CRM Databases
