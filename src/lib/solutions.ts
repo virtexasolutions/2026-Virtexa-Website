@@ -11,6 +11,15 @@ export type Solution = {
   intro: string[];
   features: { title: string; text: string }[];
   steps: { title: string; text: string }[];
+  /** Optional side-by-side table comparing Virtexa with an alternative. */
+  comparison?: {
+    heading: string;
+    intro?: string;
+    /** Column label for the alternative, e.g. "Human ISA". */
+    them: string;
+    rows: { label: string; them: string; us: string }[];
+    note?: string;
+  };
   faqs: { q: string; a: string }[];
   /** Slug of a related blog post. */
   relatedPost?: string;
@@ -18,6 +27,125 @@ export type Solution = {
 
 /** Service pages, rendered at /solutions/<slug>. */
 export const solutions: Solution[] = [
+  {
+    slug: "ai-isa",
+    name: "AI ISA",
+    heading: "AI ISA for Real Estate: An Inside Sales Agent That Never Sleeps",
+    metaTitle: "AI ISA for Real Estate | 24/7 Inside Sales Agent | Virtexa",
+    description:
+      "Virtexa's AI ISA calls new leads back in seconds, answers every call 24/7, qualifies and books appointments, and logs it all to your CRM. No hiring or managing.",
+    intro: [
+      "An inside sales agent (ISA) has one job: get every new lead on the phone fast, find out if they are serious, and set the appointment so you can spend your time with clients. The problem is that a human ISA works set hours, handles one call at a time, takes weeks to hire and train, and may leave once you have finally got them up to speed.",
+      "Virtexa builds you an AI ISA: a dedicated AI voice agent scripted around your market and your process. It calls new leads back within seconds, answers every inbound call day and night, qualifies each lead on budget, timeline, and motivation, books the appointment on your calendar, and logs everything to your CRM. When a hot lead wants a person, it warm-transfers them to you live.",
+    ],
+    features: [
+      {
+        title: "Speed to lead, every time",
+        text: "New leads get a call back within seconds of coming in, while they are still thinking about the home they asked about.",
+      },
+      {
+        title: "Works every shift",
+        text: "Nights, weekends, and holidays are covered. There are no sick days, no time off, and no gaps when someone quits.",
+      },
+      {
+        title: "Qualifies and books",
+        text: "Budget, timeline, and motivation are captured on every call, and ready leads are booked straight onto your calendar.",
+      },
+      {
+        title: "Hands hot leads to you",
+        text: "When a lead is ready to talk to a person, the AI ISA warm-transfers them to you or your team in real time.",
+      },
+      {
+        title: "Everything in your CRM",
+        text: "Every call, answer, and next step is logged to the lead's CRM record, wired into the pipeline and follow-up we build for you.",
+      },
+      {
+        title: "Nothing to manage",
+        text: "No hiring, training, call reviews, or scheduling. We build, test, and tune your AI ISA, and you get a monthly performance report.",
+      },
+    ],
+    comparison: {
+      heading: "AI ISA vs. human ISA",
+      intro:
+        "What it takes to cover your leads with a human inside sales agent, compared with a Virtexa AI ISA.",
+      them: "Human ISA",
+      rows: [
+        {
+          label: "Hours covered",
+          them: "Scheduled shifts, usually business hours",
+          us: "24/7, including nights, weekends, and holidays",
+        },
+        {
+          label: "Response to a new lead",
+          them: "When they see it and are off their last call",
+          us: "A call back within seconds",
+        },
+        {
+          label: "Calls at once",
+          them: "One at a time",
+          us: "Every call answered, even when they come in together",
+        },
+        {
+          label: "Time to get started",
+          them: "Weeks to recruit, hire, and train",
+          us: "Live in 10 to 14 days",
+        },
+        {
+          label: "What you pay for",
+          them: "Salary or hourly pay, often plus commission or per-appointment bonuses, and your time managing them",
+          us: "One plan, custom-quoted after your System Audit",
+        },
+        {
+          label: "Turnover risk",
+          them: "Start over with recruiting and training when they leave",
+          us: "None. Your script and setup stay in place",
+        },
+        {
+          label: "CRM notes",
+          them: "Depends on the person remembering",
+          us: "Logged automatically on every call",
+        },
+      ],
+      note: "A great human ISA still has a place, especially for long-term relationship nurturing. Many teams use an AI ISA for the first touch and every after-hours call, then hand warm leads to people.",
+    },
+    steps: [
+      {
+        title: "System Audit",
+        text: "We look at where your leads come from, how fast they are reached today, and where they slip through.",
+      },
+      {
+        title: "Script your ISA",
+        text: "We write the call flow and qualifying questions around your market, your listings, and how you like appointments set.",
+      },
+      {
+        title: "Connect and test",
+        text: "We wire your AI ISA to your CRM, calendar, and phone lines, then test it against real call scenarios. Most go live within 10 to 14 days.",
+      },
+      {
+        title: "Report and refine",
+        text: "A monthly performance report shows what your AI ISA handled, and we keep tuning the script.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is an AI ISA?",
+        a: "An AI ISA is an AI voice agent that does the job of a real estate inside sales agent: it reaches new leads fast, qualifies them, books appointments, and passes ready leads to an agent. Virtexa builds and runs a dedicated one for your business.",
+      },
+      {
+        q: "Will an AI ISA replace my human ISA?",
+        a: "It doesn't have to. Many teams use the AI ISA for speed to lead, overflow, and after-hours coverage, and let their people focus on relationships and conversations that are ready to move forward. Solo agents often use it in place of hiring an ISA at all.",
+      },
+      {
+        q: "How does the cost compare to hiring an ISA?",
+        a: "A human ISA usually means salary or hourly pay, often with commission or per-appointment bonuses, plus the time it takes to recruit, train, and manage them. Virtexa is one plan, custom-quoted after your System Audit, with the build, CRM setup, and monthly reporting included.",
+      },
+      {
+        q: "Does it sound like a robot?",
+        a: "No. Your AI ISA is custom-scripted to sound like your team, with a natural voice and pacing, and tested against real call scenarios before it goes live. When a caller asks for a person, it warm-transfers them to you.",
+      },
+    ],
+    relatedPost: "speed-to-lead-real-estate",
+  },
   {
     slug: "ai-call-answering",
     name: "24/7 AI Call Answering",
