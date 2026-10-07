@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Calendar, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import BookingCalendar from "./BookingCalendar";
+import HubSpotMeetings from "./HubSpotMeetings";
 
 const steps = [
   "We analyze your current lead handling & CRM setup",
@@ -11,7 +11,7 @@ const steps = [
 
 const process = [
   { num: "1", text: "Select a time on the calendar." },
-  { num: "2", text: "Complete the 3-question audit profile." },
+  { num: "2", text: "Enter your details to confirm the booking." },
   { num: "3", text: "We will get to you shortly." },
 ];
 
@@ -88,7 +88,7 @@ export default function FinalCTA() {
               id="booking-calendar-trigger"
               className="booking-calendar-trigger rounded-2xl border border-[hsl(30,10%,22%)] bg-[hsl(30,12%,10%)] p-6"
             >
-              <BookingCalendar />
+              <HubSpotMeetings />
 
               {/* Process steps */}
               <div className="mt-6 border-t border-[hsl(30,10%,22%)] pt-5">
