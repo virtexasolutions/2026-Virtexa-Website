@@ -1,0 +1,98 @@
+/* Hero motion loop: AI voice agent answers, qualifies, books, fills the calendar.
+   Every piece runs on one clock (--T), phased per scene (--sd) and staggered (--i),
+   so the loop's last frame matches its first. All names are hm- prefixed. */
+
+.hm-outer{position:relative;width:560px;height:760px}
+.hm-scale{position:absolute;left:0;top:0;width:560px;height:760px;transform-origin:0 0;--T:16s;--acc:#C19A83;font-family:"Outfit",sans-serif}
+@media (max-width:1279px){.hm-outer{width:476px;height:646px}.hm-scale{transform:scale(.85)}}
+@media (max-width:640px){.hm-outer{width:336px;height:456px}.hm-scale{transform:scale(.6)}}
+@media (max-width:380px){.hm-outer{width:291px;height:395px}.hm-scale{transform:scale(.52)}}
+@media (prefers-reduced-motion:reduce){.hm-scale *{animation-play-state:paused!important}}
+
+.hm-a{animation-duration:var(--T);animation-iteration-count:infinite;animation-fill-mode:both;animation-timing-function:cubic-bezier(.22,1,.36,1);animation-delay:calc(var(--sd,0s) + var(--T) * 0.008 * var(--i,0))}
+.hm-scn{animation-name:hm-scene;animation-timing-function:linear}
+.hm-pop{animation-name:hm-pop}
+.hm-drop{animation-name:hm-drop}
+.hm-dim{animation-name:hm-dim;animation-timing-function:ease-in-out}
+.hm-typing{animation-name:hm-typing;animation-timing-function:linear}
+.hm-ringvis{animation-name:hm-ringvis;animation-timing-function:ease-in-out}
+.hm-answered{animation-name:hm-answered}
+.hm-press{animation-name:hm-press;animation-timing-function:ease-in-out}
+.hm-selvis{animation-name:hm-selvis;animation-timing-function:ease-out}
+.hm-knob{animation-name:hm-knob;animation-timing-function:cubic-bezier(.5,0,.2,1)}
+.hm-trackon{animation-name:hm-trackon;animation-timing-function:ease-out}
+.hm-spinvis{animation-name:hm-spinvis;animation-timing-function:linear}
+.hm-chkin{animation-name:hm-chkin}
+.hm-success{animation-name:hm-success}
+.hm-shade{animation-name:hm-shade;animation-timing-function:ease-out}
+.hm-pulse{animation-name:hm-pulse;animation-timing-function:cubic-bezier(.1,.6,.3,1)}
+.hm-barfill{animation-name:hm-barfill;transform-origin:0 50%;animation-timing-function:cubic-bezier(.6,0,.3,1)}
+.hm-lift{animation-name:hm-lift;animation-timing-function:cubic-bezier(.45,.05,.35,1);animation-delay:calc(var(--sd,0s) + var(--T) * var(--lag,0));backface-visibility:visible;will-change:transform,opacity}
+.hm-streak{animation-name:hm-streak;animation-timing-function:ease-in-out}
+.hm-burst{animation-name:hm-burst;animation-timing-function:cubic-bezier(.5,0,.3,1);animation-delay:var(--sd)}
+.hm-spark{animation-name:hm-spark;animation-timing-function:ease-out;animation-delay:calc(var(--sd) + var(--T) * var(--j,0))}
+.hm-cam{animation-name:hm-cam;animation-timing-function:ease-in-out;animation-delay:0s}
+.hm-bob{animation-name:hm-bob;animation-duration:calc(var(--T) / 2);animation-timing-function:ease-in-out;animation-delay:0s}
+.hm-shadow{animation-name:hm-shadow;animation-duration:calc(var(--T) / 2);animation-timing-function:ease-in-out;animation-delay:0s}
+.hm-beam{animation-name:hm-beam;animation-timing-function:ease-in-out}
+.hm-glow{animation-name:hm-glow;animation-duration:calc(var(--T) / 2);animation-timing-function:ease-in-out;animation-delay:0s}
+.hm-flash{animation-name:hm-flash;animation-duration:calc(var(--T) / 4);animation-timing-function:ease-out;animation-delay:0s}
+.hm-sheen{animation-name:hm-sheen;animation-timing-function:ease-in-out;animation-delay:0s}
+.hm-dust{animation-name:hm-dust;animation-timing-function:ease-in-out}
+.hm-spin{animation:hm-spin calc(var(--T) / 16) linear infinite}
+.hm-dot{animation:hm-bounce calc(var(--T) / 24) ease-in-out infinite}
+.hm-ripple{animation:hm-ripple calc(var(--T) / 12) cubic-bezier(.1,.5,.3,1) infinite}
+.hm-wave{transform-origin:50% 50%;animation:hm-wave calc(var(--T) / 22) ease-in-out infinite}
+
+@keyframes hm-scene{0%{opacity:1}21.5%{opacity:1}24.5%{opacity:0}97%{opacity:0}100%{opacity:1}}
+@keyframes hm-pop{0%{opacity:0;transform:translateY(10px) scale(.97)}3%{opacity:1;transform:none}22%{opacity:1;transform:none}25%,100%{opacity:0;transform:translateY(10px) scale(.97)}}
+@keyframes hm-drop{0%{opacity:0;transform:translateY(-16px) scale(.9)}2.5%{opacity:1;transform:none}22%{opacity:1;transform:none}25%,100%{opacity:0;transform:translateY(-16px) scale(.9)}}
+@keyframes hm-dim{0%,10.5%{opacity:1}12.5%,22%{opacity:.16}25%,100%{opacity:1}}
+@keyframes hm-typing{0%,4.5%{opacity:0}5.2%,7.8%{opacity:1}8.4%,100%{opacity:0}}
+@keyframes hm-ringvis{0%,6.4%{opacity:1;transform:none}7.6%,96%{opacity:0;transform:scale(.92)}97%,100%{opacity:1;transform:none}}
+@keyframes hm-answered{0%,6.8%{opacity:0;transform:scale(.9)}8.4%,22%{opacity:1;transform:none}25%,100%{opacity:0;transform:scale(.9)}}
+@keyframes hm-press{0%,4.8%{transform:scale(1)}5.8%{transform:scale(1.2)}6.6%,100%{transform:scale(.96)}}
+@keyframes hm-selvis{0%,5.4%{opacity:0}6.6%,23%{opacity:1}25%,100%{opacity:0}}
+@keyframes hm-knob{0%,1.5%{transform:translateX(0)}3.5%,23%{transform:translateX(18px)}25%,100%{transform:translateX(0)}}
+@keyframes hm-trackon{0%,1.5%{opacity:0}3.5%,23%{opacity:1}25%,100%{opacity:0}}
+@keyframes hm-spinvis{0%,6.6%{opacity:0}7.2%,8.2%{opacity:1}8.6%,100%{opacity:0}}
+@keyframes hm-chkin{0%,8.3%{opacity:0;transform:scale(.4)}9.4%{opacity:1;transform:scale(1.15)}10.2%,22%{opacity:1;transform:scale(1)}25%,100%{opacity:0;transform:scale(.4)}}
+@keyframes hm-success{0%,8.6%{opacity:0;transform:translateY(14px) scale(.9)}10%{opacity:1;transform:scale(1.04)}11%,20.5%{opacity:1;transform:none}23%,100%{opacity:0;transform:scale(.95)}}
+@keyframes hm-shade{0%,8.6%{opacity:0}10%,20.5%{opacity:1}23%,100%{opacity:0}}
+@keyframes hm-pulse{0%,9%{opacity:0;transform:scale(.8)}9.6%{opacity:.85;transform:scale(1)}15.5%,100%{opacity:0;transform:scale(2.2)}}
+@keyframes hm-barfill{0%,2.5%{transform:scaleX(0)}11%,23%{transform:scaleX(1)}25%,100%{transform:scaleX(0)}}
+
+/* glass panel: lifts off the screen, orbits the phone, dissolves into particles */
+@keyframes hm-lift{
+0%,10.5%{opacity:0;transform:rotateY(0deg) translate3d(var(--ox),var(--oy),4px) scale(.94);filter:blur(var(--bl,0px))}
+12.8%{opacity:var(--pk,1);transform:rotateY(0deg) translate3d(var(--ox),var(--oy),120px) scale(1);filter:blur(var(--bl,0px))}
+16.5%{opacity:var(--pk,1);transform:rotateY(calc(-55deg * var(--dir))) translate3d(0px,calc(var(--oy) * .6 - 20px),230px) scale(1);filter:blur(var(--bl,0px))}
+19.5%{opacity:var(--pk,1);transform:rotateY(calc(-105deg * var(--dir))) translate3d(0px,calc(var(--oy) * .4 - 40px),240px) scale(.96);filter:blur(var(--bl,0px))}
+21.5%,100%{opacity:0;transform:rotateY(calc(-120deg * var(--dir))) translate3d(0px,calc(var(--oy) * .4 - 50px),250px) scale(1.22);filter:blur(calc(var(--bl,0px) + 12px))}}
+@keyframes hm-streak{0%,12.6%{opacity:0}14.2%{opacity:.9}19%{opacity:.6}20.6%,100%{opacity:0}}
+@keyframes hm-burst{
+0%,19.5%{transform:rotateY(calc(-105deg * var(--dir))) translate3d(0px,calc(var(--oy) * .4 - 40px),240px)}
+21.5%{transform:rotateY(calc(-120deg * var(--dir))) translate3d(0px,calc(var(--oy) * .4 - 50px),250px)}
+24.8%{transform:rotateY(calc(-360deg * var(--dir))) translate3d(0px,0px,8px)}
+100%{transform:rotateY(calc(-105deg * var(--dir))) translate3d(0px,calc(var(--oy) * .4 - 40px),240px)}}
+@keyframes hm-spark{0%,19.8%{opacity:0;transform:translate(0,0) scale(.3)}21.2%{opacity:1;transform:translate(var(--px),var(--py)) scale(1)}23%{opacity:.85;transform:translate(calc(var(--px) * .55),calc(var(--py) * .55)) scale(.8)}24.8%,100%{opacity:0;transform:translate(0,0) scale(.3)}}
+
+/* camera, light, atmosphere */
+@keyframes hm-cam{0%,100%{transform:rotateY(-19deg) rotateX(5deg) rotateZ(-1deg)}50%{transform:rotateY(-6deg) rotateX(1.5deg) rotateZ(.5deg)}}
+@keyframes hm-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes hm-shadow{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(.88);opacity:.42}}
+@keyframes hm-beam{0%,100%{transform:rotate(26deg);opacity:.65}50%{transform:rotate(33deg);opacity:1}}
+@keyframes hm-glow{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+@keyframes hm-flash{0%{opacity:.6}10%{opacity:0}90%{opacity:0}100%{opacity:.6}}
+@keyframes hm-sheen{0%,100%{transform:translateX(-30%)}50%{transform:translateX(30%)}}
+@keyframes hm-dust{0%,100%{transform:translate(0,0);opacity:calc(var(--o) * .35)}50%{transform:translate(var(--dx),var(--dy));opacity:var(--o)}}
+@keyframes hm-spin{to{transform:rotate(360deg)}}
+@keyframes hm-bounce{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-3px);opacity:1}}
+@keyframes hm-ripple{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.9);opacity:0}}
+@keyframes hm-wave{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
+
+.hm-glass{position:absolute;border-radius:18px;box-sizing:border-box;background:linear-gradient(140deg,rgba(253,248,245,.24),rgba(253,248,245,.05) 55%,color-mix(in srgb,var(--acc) 22%,transparent));border:1px solid rgba(253,248,245,.34);box-shadow:inset 0 1px 0 rgba(255,255,255,.38),0 18px 40px rgba(0,0,0,.45),0 0 38px color-mix(in srgb,var(--acc) 38%,transparent)}
+.hm-orbit{position:absolute;left:150px;top:310px;width:0;height:0;transform-style:preserve-3d}
+.hm-tile{position:absolute;border-radius:16px;background:rgba(253,248,245,.04);border:1px solid rgba(253,248,245,.08);box-sizing:border-box}
+.hm-pl{position:absolute;border-radius:99px}
+.hm-wb{width:5px;border-radius:3px;background:linear-gradient(to top,var(--acc),#FDF8F5)}
