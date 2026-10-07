@@ -77,7 +77,7 @@ export default function FinalCTA() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               id="booking-calendar-trigger"
-              className="booking-calendar-trigger rounded-2xl border border-[hsl(30,10%,22%)] bg-[hsl(30,12%,10%)] p-6"
+              className="booking-calendar-trigger self-center rounded-2xl border border-[hsl(30,10%,22%)] bg-[hsl(30,12%,10%)] p-6"
             >
               <h3
                 className="font-semibold"
