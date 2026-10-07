@@ -12,6 +12,7 @@ import {
   Check,
   ArrowRight,
 } from "lucide-react";
+import { BOOKING_URL } from "@/lib/booking";
 import { cn } from "@/lib/utils";
 
 interface Message {
@@ -820,7 +821,15 @@ export default function Chatbot() {
                   </div>
                   {m.isBookingWidget && m.role === "bot" && (
                     <div className="w-full max-w-[92%]">
-                      <ChatBookingWidget onBooked={handleBooked} />
+                      <a
+                        href={BOOKING_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-2 flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-[hsl(21,38%,64%)] to-[hsl(28,35%,72%)] px-3 py-2 text-xs font-semibold text-[hsl(0,0%,10%)] hover:opacity-90"
+                      >
+                        <Calendar className="h-3.5 w-3.5" />
+                        Pick a time for your audit
+                      </a>
                     </div>
                   )}
                 </div>
