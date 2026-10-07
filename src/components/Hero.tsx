@@ -7,7 +7,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import PhoneSimulator from "./PhoneSimulator";
+import HeroMotion from "./HeroMotion";
 
 export default function Hero() {
   const scrollTo = (href: string) =>
@@ -124,19 +124,14 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right: phone simulator */}
+          {/* Right: AI voice agent motion loop */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex justify-center lg:justify-end"
           >
-            <div className="relative">
-              <div className="absolute -top-10 left-1/2 -translate-x-1/2 rounded-full glass-strong px-4 py-1.5 text-xs font-medium text-[hsl(28,40%,76%)] whitespace-nowrap">
-                Test Live AI Voice Agent
-              </div>
-              <PhoneSimulator />
-            </div>
+            <HeroMotion />
           </motion.div>
         </div>
       </div>
