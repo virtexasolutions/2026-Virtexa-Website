@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Calendar, Check } from "lucide-react";
+import { ArrowRight, Calendar, Check, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import HubSpotMeetings from "./HubSpotMeetings";
+import { BOOKING_URL } from "@/lib/booking";
 
 const steps = [
   "We analyze your current lead handling & CRM setup",
@@ -10,7 +10,7 @@ const steps = [
 ];
 
 const process = [
-  { num: "1", text: "Select a time on the calendar." },
+  { num: "1", text: "Pick a time that works for you." },
   { num: "2", text: "Enter your details to confirm the booking." },
   { num: "3", text: "We will get to you shortly." },
 ];
@@ -59,23 +59,14 @@ export default function FinalCTA() {
               </ul>
 
               <Button
+                asChild
                 size="lg"
-                onClick={() => {
-                  const cal = document.querySelector(
-                    "#audit .booking-calendar-trigger",
-                  );
-                  if (cal) {
-                    cal.scrollIntoView({ behavior: "smooth", block: "center" });
-                  } else {
-                    document
-                      .querySelector("#audit")
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
                 className="mt-8 gap-2 rounded-xl bg-gradient-to-r from-[hsl(21,38%,64%)] to-[hsl(28,35%,72%)] text-[hsl(0,0%,10%)] font-semibold hover:opacity-90 glow-primary"
               >
-                <Calendar className="h-4 w-4" />
-                Book Your 30-Minute System Audit
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                  <Calendar className="h-4 w-4" />
+                  Book Your 30-Minute System Audit
+                </a>
               </Button>
             </div>
 
@@ -88,7 +79,25 @@ export default function FinalCTA() {
               id="booking-calendar-trigger"
               className="booking-calendar-trigger rounded-2xl border border-[hsl(30,10%,22%)] bg-[hsl(30,12%,10%)] p-6"
             >
-              <HubSpotMeetings />
+              <h3
+                className="font-semibold"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                Claim Your Audit
+              </h3>
+              <p className="mt-2 flex items-center gap-1.5 text-xs text-muted-foreground">
+                <Clock className="h-3.5 w-3.5" />
+                30 minutes · Live demo tailored to your market
+              </p>
+              <Button
+                asChild
+                className="mt-5 w-full gap-2 rounded-xl bg-gradient-to-r from-[hsl(21,38%,64%)] to-[hsl(28,35%,72%)] text-[hsl(0,0%,10%)] font-semibold hover:opacity-90"
+              >
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                  Pick a Time
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
 
               {/* Process steps */}
               <div className="mt-6 border-t border-[hsl(30,10%,22%)] pt-5">
