@@ -10,7 +10,7 @@ const oldWay = [
 
 const virtexaWay = [
   "Instant 5-second AI voice callback",
-  "Instant missed-call text-back",
+  "Showings booked on your real calendar",
   "24/7 AI front-desk concierge",
   "Zero-management custom Virtexa OS",
 ];

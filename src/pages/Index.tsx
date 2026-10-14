@@ -33,7 +33,7 @@ const structuredData = {
       name: "AI Voice Agent for Real Estate",
       serviceType: "AI voice agent and answering service",
       description:
-        "A dedicated AI voice agent that answers every call 24/7, qualifies and books leads, texts back missed calls, and warm-transfers hot leads for real estate agents, teams, and brokerages.",
+        "A dedicated AI voice agent that answers every call 24/7, qualifies leads, books showings, and warm-transfers hot leads for real estate agents, teams, and brokerages.",
       url: `${SITE_URL}/`,
       provider: { "@id": ORGANIZATION_ID },
       audience: {
@@ -70,7 +70,7 @@ const Index = () => {
   usePageSeo({
     title: "AI Voice Agent & Answering Service for Real Estate Agents | Virtexa",
     description:
-      "Virtexa builds and runs dedicated AI voice agents for real estate agents, teams, and brokerages. Answer every call 24/7, qualify and book leads on the spot, text back missed calls instantly, and warm-transfer hot leads.",
+      "Virtexa builds and runs dedicated AI voice agents for real estate agents, teams, and brokerages. Answer every call 24/7, qualify and book leads on the spot, and warm-transfer hot leads.",
     path: "/",
     structuredData,
   });

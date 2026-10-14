@@ -7,10 +7,6 @@ const footerLinks: Record<string, FooterLink[]> = {
   Solutions: [
     { label: "AI ISA", href: "/solutions/ai-isa" },
     { label: "24/7 AI Call Answering", href: "/solutions/ai-call-answering" },
-    {
-      label: "Missed-Call Text-Back",
-      href: "/solutions/missed-call-text-back",
-    },
     { label: "Appointment Booking", href: "/solutions/appointment-booking" },
     { label: "Live Warm Transfer", href: "/solutions/live-warm-transfer" },
   ],

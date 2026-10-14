@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {
   Phone,
   ClipboardCheck,
-  MessageSquareText,
+  Building2,
   CalendarCheck,
   Workflow,
   PhoneForwarded,
@@ -26,10 +26,9 @@ const included = [
     text: "Budget, timeline, and motivation captured on every call and logged straight to the CRM record.",
   },
   {
-    icon: MessageSquareText,
-    title: "Instant Missed-Call Text-Back",
-    href: "/solutions/missed-call-text-back",
-    text: "A missed call gets a text reply within seconds — before the lead has a chance to call the next listing agent.",
+    icon: Building2,
+    title: "AI Receptionist for Brokerages",
+    text: "Your main office line answered by an AI receptionist that warm-transfers each caller to the right agent, by name or by property.",
   },
   {
     icon: CalendarCheck,
