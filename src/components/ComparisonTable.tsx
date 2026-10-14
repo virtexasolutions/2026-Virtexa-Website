@@ -34,12 +34,6 @@ const rows: {
     virtexa: "By agent name or property address",
   },
   {
-    feature: "Missed-call text-back",
-    voicemail: "no",
-    service: "no",
-    virtexa: "Within seconds",
-  },
-  {
     feature: "Books showings & appointments",
     voicemail: "no",
     service: "warn",

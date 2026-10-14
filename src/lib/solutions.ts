@@ -210,65 +210,6 @@ export const solutions: Solution[] = [
     relatedPost: "what-is-an-ai-voice-agent-for-real-estate",
   },
   {
-    slug: "missed-call-text-back",
-    name: "Missed-Call Text-Back",
-    heading: "Missed-Call Text-Back Service for Real Estate Agents",
-    metaTitle: "Missed-Call Text-Back Service for Real Estate | Virtexa",
-    description:
-      "When a call is missed, Virtexa texts the caller back within seconds, keeps the conversation going, and logs it to your CRM, so leads don't go to the next agent.",
-    intro: [
-      "Many callers will not leave a voicemail. If a call goes unanswered, the lead may already be dialing the next listing agent before you see the missed call.",
-      "Virtexa's missed-call text-back replies to the caller by text within seconds, so the conversation keeps going while their interest is at its peak. It works alongside your AI voice agent as a safety net for any call that is not answered live.",
-    ],
-    features: [
-      {
-        title: "A reply within seconds",
-        text: "A missed call gets a friendly text reply within seconds, before the lead has a chance to call someone else.",
-      },
-      {
-        title: "Written in your voice",
-        text: "Messages identify you and your business and invite the caller to keep talking, rather than reading like a marketing blast.",
-      },
-      {
-        title: "Logged to your CRM",
-        text: "Every text conversation is saved to the lead's record, so you have the full context when you follow up.",
-      },
-      {
-        title: "Opt-outs honored",
-        text: "Replies of STOP are honored automatically, and messages are sent through registered business texting.",
-      },
-    ],
-    steps: [
-      {
-        title: "Connect your number",
-        text: "We connect your business line so missed calls are detected automatically.",
-      },
-      {
-        title: "Write the messages",
-        text: "We write your text-back messages and follow-up logic around how you work.",
-      },
-      {
-        title: "Wire it to your CRM",
-        text: "Conversations and lead details flow into your CRM and pipeline.",
-      },
-      {
-        title: "Go live",
-        text: "Every missed call gets a text reply, day or night.",
-      },
-    ],
-    faqs: [
-      {
-        q: "Do I need missed-call text-back if I have an AI voice agent?",
-        a: "Your AI voice agent answers calls live, and text-back catches anything that still slips through, such as a caller who hangs up before the call connects.",
-      },
-      {
-        q: "Is texting leads allowed?",
-        a: "Texting someone who just called you about their inquiry is standard practice, but there are rules to follow, such as honoring opt-outs and registering your business texting. We build these safeguards in. Check with your broker or attorney for your specific situation.",
-      },
-    ],
-    relatedPost: "missed-call-text-back-for-realtors",
-  },
-  {
     slug: "appointment-booking",
     name: "Appointment Booking",
     heading: "AI Appointment Booking for Real Estate",

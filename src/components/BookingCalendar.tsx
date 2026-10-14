@@ -492,9 +492,6 @@ export default function BookingCalendar() {
                   <option value="Qualify & Book More Leads">
                     Qualify & Book More Leads
                   </option>
-                  <option value="Text Back Missed Calls">
-                    Text Back Missed Calls
-                  </option>
                   <option value="Automate Follow-Up & Pipeline">
                     Automate Follow-Up & Pipeline
                   </option>

@@ -55,8 +55,8 @@ export default function Terms() {
         <p>
           Virtexa builds and operates AI voice agents for real estate
           professionals. Depending on your plan and Order, the Services may
-          include 24/7 AI call answering, live lead qualification, instant
-          missed-call text-back, showing and appointment booking, a pipeline and
+          include 24/7 AI call answering, live lead qualification, showing and
+          appointment booking, a pipeline and
           follow-up automation build, and live warm transfer. Your plan, scope,
           fees, and timeline are set out in your Order.
         </p>

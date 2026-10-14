@@ -158,7 +158,7 @@ export default function Privacy() {
       <LegalSection id="client-data" title="6. Data We Process for Our Clients">
         <p>
           Our clients are real estate agents, teams, and brokerages. When our AI
-          agents answer calls, send missed-call text-backs, book appointments,
+          agents answer calls, book appointments,
           or transfer calls for a client, we collect caller information on that
           client's behalf. This can include the caller's name, phone number,
           email, call recordings and transcripts, and details such as property

@@ -484,7 +484,7 @@ async function getBotResponseAsync(
           {
             role: "system",
             content:
-              "You are Virtexa AI, the conversational AI sales engineer for Virtexa Solutions. Virtexa provides custom AI voice agents and autonomous operating systems for real estate top producers, teams, and brokerages. Every plan includes the same done-for-you build: 24/7 AI call answering, live lead qualification (budget, timeline, motivation), instant missed-call text-back, showing booking straight onto the agent's own Google or Outlook calendar (only in times they're free), an agent that knows the client's listings (price, beds, baths, details), live warm transfer with the agent briefed first, every call recorded and transcribed with an AI summary and intent score in the client's own Virtexa portal, and leads sent automatically to their CRM (Follow Up Boss, HubSpot and GoHighLevel directly, almost any other CRM through Zapier or Make). Brokerages also get an AI receptionist on the main line that routes callers to the right agent by name or by property address, plus one brokerage login that shows every agent, listing and routed call. The Virtexa team sets up everything (voice, script, phone line, listings, CRM); the client's only step is connecting their calendar. There are three plans: Solo Agent (one agent or a small team covering their first line), Team (2–4 agents on shared lines), and Brokerage (5+ agents or multi-office). Most agents go live within 10–14 days of kickoff. Never quote prices, fees, minutes or allowances; pricing is custom-quoted after a System Audit. Only describe the features listed here. Whenever a user expresses interest in a system audit, demo, pricing quote, or consultation, encourage them to pick a time directly in the chat widget.",
+              "You are Virtexa AI, the conversational AI sales engineer for Virtexa Solutions. Virtexa provides custom AI voice agents and autonomous operating systems for real estate top producers, teams, and brokerages. Every plan includes the same done-for-you build: 24/7 AI call answering, live lead qualification (budget, timeline, motivation), showing booking straight onto the agent's own Google or Outlook calendar (only in times they're free), an agent that knows the client's listings (price, beds, baths, details), live warm transfer with the agent briefed first, every call recorded and transcribed with an AI summary and intent score in the client's own Virtexa portal, and leads sent automatically to their CRM (Follow Up Boss, HubSpot and GoHighLevel directly, almost any other CRM through Zapier or Make). Brokerages also get an AI receptionist on the main line that routes callers to the right agent by name or by property address, plus one brokerage login that shows every agent, listing and routed call. The Virtexa team sets up everything (voice, script, phone line, listings, CRM); the client's only step is connecting their calendar. There are three plans: Solo Agent (one agent or a small team covering their first line), Team (2–4 agents on shared lines), and Brokerage (5+ agents or multi-office). Most agents go live within 10–14 days of kickoff. Never quote prices, fees, minutes or allowances; pricing is custom-quoted after a System Audit. Only describe the features listed here. Whenever a user expresses interest in a system audit, demo, pricing quote, or consultation, encourage them to pick a time directly in the chat widget.",
           },
           ...chatHistory,
           { role: "user", content: input },
@@ -534,7 +534,7 @@ async function getBotResponseAsync(
     q.includes("what do you do")
   ) {
     return {
-      text: "Every Virtexa plan includes the same done-for-you build: 24/7 AI call answering, live lead qualification, instant missed-call text-back, showings booked straight onto your Google or Outlook calendar, an agent that knows your listings, live warm transfer, every call recorded and transcribed in your own portal, and leads sent automatically to your CRM. Our team sets it all up for you.",
+      text: "Every Virtexa plan includes the same done-for-you build: 24/7 AI call answering, live lead qualification, showings booked straight onto your Google or Outlook calendar, an agent that knows your listings, live warm transfer, every call recorded and transcribed in your own portal, and leads sent automatically to your CRM. Our team sets it all up for you.",
     };
   }
   if (
@@ -548,9 +548,9 @@ async function getBotResponseAsync(
       showBookingWidget: true,
     };
   }
-  if (q.includes("text") || q.includes("sms") || q.includes("missed")) {
+  if (q.includes("missed")) {
     return {
-      text: "When a call is missed, the lead gets a text reply within seconds, before they have a chance to call the next listing agent.",
+      text: "With Virtexa, calls don't get missed: your AI agent picks up every call in under two rings, 24/7, including nights, weekends, and while you're with a client.",
     };
   }
   if (q.includes("transfer") || q.includes("person")) {
@@ -626,7 +626,7 @@ async function getBotResponseAsync(
     q.includes("missed call")
   ) {
     return {
-      text: "Every inbound call is picked up in under two rings, 24/7 — and a missed call gets an instant text-back within seconds, before the lead can call the next agent.",
+      text: "Every inbound call is picked up in under two rings, 24/7, so no lead waits for a callback or reaches voicemail.",
     };
   }
   if (
