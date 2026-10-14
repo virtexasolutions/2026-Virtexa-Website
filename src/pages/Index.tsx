@@ -5,6 +5,10 @@ import StatsBar from "@/components/StatsBar";
 import ProblemMatrix from "@/components/ProblemMatrix";
 import OfferEcosystem from "@/components/OfferEcosystem";
 import ComparisonTable from "@/components/ComparisonTable";
+import CallFlow from "@/components/CallFlow";
+import ProductShowcase from "@/components/ProductShowcase";
+import BrokerageSection from "@/components/BrokerageSection";
+import DoneForYou from "@/components/DoneForYou";
 import AudioDemo from "@/components/AudioDemo";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
@@ -86,9 +90,13 @@ const Index = () => {
         <Hero />
         <StatsBar />
         <ProblemMatrix />
+        <CallFlow />
+        <ProductShowcase />
         <OfferEcosystem />
-        <ComparisonTable />
         <AudioDemo />
+        <BrokerageSection />
+        <DoneForYou />
+        <ComparisonTable />
         <Pricing />
         <FAQ />
         <FinalCTA />

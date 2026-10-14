@@ -22,6 +22,18 @@ const rows: {
     virtexa: "Budget, timeline & motivation logged to your CRM",
   },
   {
+    feature: "Knows your listings",
+    voicemail: "no",
+    service: "Reads from a script",
+    virtexa: "Price, beds, baths & details on every call",
+  },
+  {
+    feature: "Routes callers to the right agent",
+    voicemail: "no",
+    service: "warn",
+    virtexa: "By agent name or property address",
+  },
+  {
     feature: "Missed-call text-back",
     voicemail: "no",
     service: "no",
@@ -31,7 +43,7 @@ const rows: {
     feature: "Books showings & appointments",
     voicemail: "no",
     service: "warn",
-    virtexa: "Real time, on your calendar",
+    virtexa: "Straight onto your Google or Outlook calendar",
   },
   {
     feature: "Follow-up & pipeline automation",
@@ -44,6 +56,12 @@ const rows: {
     voicemail: "no",
     service: "warn",
     virtexa: "Live, in real time",
+  },
+  {
+    feature: "Recordings & transcripts",
+    voicemail: "no",
+    service: "no",
+    virtexa: "Every call, in your own portal",
   },
   {
     feature: "Setup & management",
