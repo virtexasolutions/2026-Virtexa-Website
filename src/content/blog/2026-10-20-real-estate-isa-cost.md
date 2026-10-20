@@ -74,7 +74,7 @@ An AI voice agent is not a full replacement for every part of an ISA's job, but 
 
 A Virtexa AI voice agent picks up every call to your business, qualifies the caller on timeline, budget, financing, and the property they are interested in, books showings directly onto your calendar, and warm-transfers hot leads to your phone. Each call lands in your CRM with a summary and a [lead score](/solutions/lead-qualification), so you know who to call first. There is no hiring, no ramp-up, and no turnover, and it never has a lunch break.
 
-What it does not do is the outbound side: working through old leads, making follow-up calls, and nurturing relationships over months. If that is where most of your ISA's value comes from, a human ISA still earns their place. Many teams use both: AI for every inbound call and after-hours coverage, and people for outbound follow-up and relationship building.
+What it does not do is the outbound side: working through old leads, making follow-up calls, and nurturing relationships over months. If that is where most of your ISA's value comes from, a human ISA still earns their place. Many teams use both: AI for every inbound call and after-hours coverage, and people for outbound follow-up and relationship building. Our [AI vs ISA comparison](/compare/ai-vs-isa) goes through when each one fits.
 
 ## How to decide
 

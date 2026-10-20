@@ -1,3 +1,14 @@
+/** Side-by-side table comparing Virtexa with an alternative. */
+export type Comparison = {
+  heading: string;
+  intro?: string;
+  /** Column label for the alternative, e.g. "Human ISA". */
+  them: string;
+  /** `limited` marks a row where Virtexa does not do the thing. */
+  rows: { label: string; them: string; us: string; limited?: boolean }[];
+  note?: string;
+};
+
 export type Solution = {
   slug: string;
   /** Short name used in navigation and the footer. */
@@ -11,15 +22,7 @@ export type Solution = {
   intro: string[];
   features: { title: string; text: string }[];
   steps: { title: string; text: string }[];
-  /** Optional side-by-side table comparing Virtexa with an alternative. */
-  comparison?: {
-    heading: string;
-    intro?: string;
-    /** Column label for the alternative, e.g. "Human ISA". */
-    them: string;
-    rows: { label: string; them: string; us: string }[];
-    note?: string;
-  };
+  comparison?: Comparison;
   faqs: { q: string; a: string }[];
   /** Slug of a related blog post. */
   relatedPost?: string;
