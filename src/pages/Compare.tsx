@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { marked } from "marked";
 import { Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import AnswerBox from "@/components/AnswerBox";
 import ComparisonSection from "@/components/ComparisonSection";
 import Footer from "@/components/Footer";
 import SubpageHeader from "@/components/SubpageHeader";
@@ -100,6 +101,9 @@ function ComparePage({ page }: { page: ComparisonData }) {
             >
               {page.heading}
             </h1>
+            <div className="mt-6">
+              <AnswerBox summary={page.summary} />
+            </div>
             <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
               {page.intro.map((p, i) => (
                 <p key={i}>{p}</p>

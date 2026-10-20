@@ -76,6 +76,14 @@ describe("published posts", () => {
     }
   });
 
+  it("keep 'In short' summaries short enough to quote", () => {
+    for (const p of posts.filter((post) => post.summary)) {
+      const words = p.summary!.split(/\s+/).length;
+      expect(words, p.slug).toBeGreaterThanOrEqual(30);
+      expect(words, p.slug).toBeLessThanOrEqual(70);
+    }
+  });
+
   it("only link internally to pages that exist", () => {
     const slugs = new Set(posts.map((p) => p.slug));
     for (const p of posts) {

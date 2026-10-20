@@ -3,6 +3,7 @@ title: "Missed-Call Text-Back for Realtors: How to Save Leads You Can't Answer"
 description: How missed-call text-back works for real estate agents, what a good automatic reply says, compliance basics to follow, and how it fits with an AI voice agent.
 date: 2026-09-29
 author: Virtexa Solutions
+summary: "Missed-call text-back sends an automatic text to anyone whose call you did not answer, usually within seconds. It keeps the lead engaged, reaches callers who never leave a voicemail, and gives you time to call back prepared. A good message is short, personal, and offers a clear next step, and you should only text people who contacted you."
 tags: [Missed-Call Text-Back, Lead Response, Real Estate]
 ---
 
