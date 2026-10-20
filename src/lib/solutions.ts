@@ -33,15 +33,15 @@ export const solutions: Solution[] = [
     heading: "AI ISA for Real Estate: An Inside Sales Agent That Never Sleeps",
     metaTitle: "AI ISA for Real Estate | 24/7 Inside Sales Agent | Virtexa",
     description:
-      "Virtexa's AI ISA calls new leads back in seconds, answers every call 24/7, qualifies and books appointments, and logs it all to your CRM. No hiring or managing.",
+      "Virtexa's AI ISA answers every call 24/7 in under two rings, qualifies the lead, books showings, and logs it all to your CRM. No hiring or managing.",
     intro: [
       "An inside sales agent (ISA) has one job: get every new lead on the phone fast, find out if they are serious, and set the appointment so you can spend your time with clients. The problem is that a human ISA works set hours, handles one call at a time, takes weeks to hire and train, and may leave once you have finally got them up to speed.",
-      "Virtexa builds you an AI ISA: a dedicated AI voice agent scripted around your market and your process. It calls new leads back within seconds, answers every inbound call day and night, qualifies each lead on budget, timeline, and motivation, books the appointment on your calendar, and logs everything to your CRM. When a hot lead wants a person, it warm-transfers them to you live.",
+      "Virtexa builds you an AI ISA: a dedicated AI voice agent scripted around your market and your process. It answers every inbound call in under two rings, day and night, qualifies each lead on timeline, budget, and financing, books the showing on your calendar, and logs everything to your CRM. When a hot lead wants a person, it warm-transfers them to you live.",
     ],
     features: [
       {
         title: "Speed to lead, every time",
-        text: "New leads get a call back within seconds of coming in, while they are still thinking about the home they asked about.",
+        text: "Every new lead who calls is answered live in under two rings, while they are still thinking about the home they asked about.",
       },
       {
         title: "Works every shift",
@@ -49,7 +49,7 @@ export const solutions: Solution[] = [
       },
       {
         title: "Qualifies and books",
-        text: "Budget, timeline, and motivation are captured on every call, and ready leads are booked straight onto your calendar.",
+        text: "Timeline, budget, and financing are captured on every call, and ready leads are booked straight onto your calendar.",
       },
       {
         title: "Hands hot leads to you",
@@ -77,8 +77,8 @@ export const solutions: Solution[] = [
         },
         {
           label: "Response to a new lead",
-          them: "When they see it and are off their last call",
-          us: "A call back within seconds",
+          them: "When they are free and off their last call",
+          us: "Answered live in under two rings",
         },
         {
           label: "Calls at once",
@@ -106,7 +106,7 @@ export const solutions: Solution[] = [
           us: "Logged automatically on every call",
         },
       ],
-      note: "A great human ISA still has a place, especially for long-term relationship nurturing. Many teams use an AI ISA for the first touch and every after-hours call, then hand warm leads to people.",
+      note: "A great human ISA still has a place, especially for outbound follow-up and long-term relationship nurturing, which the AI ISA does not do. Many teams use an AI ISA for every inbound and after-hours call, then hand warm leads to people.",
     },
     steps: [
       {
@@ -129,11 +129,15 @@ export const solutions: Solution[] = [
     faqs: [
       {
         q: "What is an AI ISA?",
-        a: "An AI ISA is an AI voice agent that does the job of a real estate inside sales agent: it reaches new leads fast, qualifies them, books appointments, and passes ready leads to an agent. Virtexa builds and runs a dedicated one for your business.",
+        a: "An AI ISA is an AI voice agent that does the job of a real estate inside sales agent: it talks to new leads the moment they call, qualifies them, books appointments, and passes ready leads to an agent. Virtexa builds and runs a dedicated one for your business.",
+      },
+      {
+        q: "Does the AI ISA make outbound calls?",
+        a: "No. Your AI ISA answers inbound calls: new leads calling about a listing, sellers asking about their home, and anyone who rings after hours. It does not dial out to old leads or run follow-up call campaigns, so if outbound prospecting is a big part of your plan, that is still a job for a person.",
       },
       {
         q: "Will an AI ISA replace my human ISA?",
-        a: "It doesn't have to. Many teams use the AI ISA for speed to lead, overflow, and after-hours coverage, and let their people focus on relationships and conversations that are ready to move forward. Solo agents often use it in place of hiring an ISA at all.",
+        a: "It doesn't have to. Many teams use the AI ISA for every inbound call, overflow, and after-hours coverage, and let their people focus on outbound follow-up and conversations that are ready to move forward. Solo agents often use it in place of hiring an ISA at all.",
       },
       {
         q: "How does the cost compare to hiring an ISA?",
@@ -168,7 +172,7 @@ export const solutions: Solution[] = [
       },
       {
         title: "Live lead qualification",
-        text: "Budget, timeline, and motivation are captured on every call and logged straight to the lead's CRM record.",
+        text: "Timeline, budget, and financing are captured on every call and logged straight to the lead's CRM record.",
       },
       {
         title: "Books and transfers",
@@ -343,7 +347,7 @@ export const solutions: Solution[] = [
       },
       {
         title: "Qualified before they book",
-        text: "Budget, timeline, and motivation are captured first, so you walk into every appointment prepared.",
+        text: "Timeline, budget, and financing are captured first, so you walk into every appointment prepared.",
       },
       {
         title: "In your CRM automatically",

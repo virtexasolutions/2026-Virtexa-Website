@@ -23,7 +23,8 @@ const included = [
   {
     icon: ClipboardCheck,
     title: "Live Lead Qualification",
-    text: "Budget, timeline, and motivation captured on every call and logged straight to the CRM record.",
+    href: "/solutions/lead-qualification",
+    text: "Timeline, budget, and financing captured on every call, scored, and logged straight to the CRM record.",
   },
   {
     icon: Building2,
