@@ -16,6 +16,7 @@ const footerLinks: Record<string, FooterLink[]> = {
     { label: "Use Cases", href: "/#use-cases" },
     { label: "Comparison", href: "/#comparison" },
     { label: "AI vs ISA", href: "/compare/ai-vs-isa" },
+    { label: "CRM Integrations", href: "/integrations" },
     { label: "Pricing", href: "/#pricing" },
     {
       label: "Virtexa Connect",
