@@ -1,4 +1,5 @@
 import { postPath, posts } from "@/lib/blog";
+import { comparisonPath, comparisons } from "@/lib/comparisons";
 import { solutionPath, solutions } from "@/lib/solutions";
 
 export type PrerenderRoute = {
@@ -17,6 +18,7 @@ export function prerenderRoutes(): PrerenderRoute[] {
   return [
     { path: "/" },
     ...solutions.map((s) => ({ path: solutionPath(s) })),
+    ...comparisons.map((c) => ({ path: comparisonPath(c) })),
     {
       path: "/blog",
       lastmod: posts[0] ? (posts[0].updated ?? posts[0].date) : undefined,
