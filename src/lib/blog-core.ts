@@ -27,6 +27,8 @@ export type BlogPost = {
   /** ISO date (YYYY-MM-DD) the post was last meaningfully updated. */
   updated?: string;
   author: string;
+  /** Optional 40-60 word direct answer shown at the top as "In short". */
+  summary?: string;
   tags: string[];
   /** Optional absolute or root-relative URL of a social share image. */
   image?: string;
@@ -99,6 +101,7 @@ export function parsePost(path: string, raw: string): BlogPost {
     date: str("date")!,
     updated: str("updated"),
     author: str("author") ?? SITE_NAME,
+    summary: str("summary"),
     tags: Array.isArray(tags) ? tags : tags ? [tags] : [],
     image: str("image"),
     draft: str("draft") === "true",
