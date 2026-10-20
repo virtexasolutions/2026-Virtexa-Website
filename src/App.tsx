@@ -13,6 +13,8 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Solution from "./pages/Solution";
 import Compare from "./pages/Compare";
+import Integrations from "./pages/Integrations";
+import Integration from "./pages/Integration";
 
 /**
  * Providers and routes shared by the browser app (below) and the build-time
@@ -35,6 +37,8 @@ export function AppShell() {
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/solutions/:slug" element={<Solution />} />
           <Route path="/compare/:slug" element={<Compare />} />
+          <Route path="/integrations" element={<Integrations />} />
+          <Route path="/integrations/:slug" element={<Integration />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
