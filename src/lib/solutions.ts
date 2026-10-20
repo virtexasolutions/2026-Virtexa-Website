@@ -144,7 +144,7 @@ export const solutions: Solution[] = [
         a: "No. Your AI ISA is custom-scripted to sound like your team, with a natural voice and pacing, and tested against real call scenarios before it goes live. When a caller asks for a person, it warm-transfers them to you.",
       },
     ],
-    relatedPost: "speed-to-lead-real-estate",
+    relatedPost: "real-estate-isa-cost",
   },
   {
     slug: "ai-call-answering",
@@ -208,6 +208,118 @@ export const solutions: Solution[] = [
       },
     ],
     relatedPost: "what-is-an-ai-voice-agent-for-real-estate",
+  },
+  {
+    slug: "lead-qualification",
+    name: "Live Lead Qualification",
+    heading: "Real Estate Lead Qualification with AI, on Every Call",
+    metaTitle: "Real Estate Lead Qualification AI | Virtexa",
+    description:
+      "Virtexa's AI voice agent qualifies every caller on timeline, budget, financing, and property, scores the lead, and sends a ready-to-act summary to your CRM.",
+    intro: [
+      "Most callers will tell you exactly how serious they are if someone asks the right questions. When are they hoping to move? What price range are they in? Are they pre-approved or paying cash? Which home or neighborhood are they calling about? The trouble is that those questions only get asked when someone picks up, and the answers only help if they end up somewhere you can act on them.",
+      "Virtexa's AI voice agent asks them on every inbound call, day or night, in a natural conversation. After the call, you get a scored lead with the answers, a short summary, and a recommended next step, already sitting in your CRM. You decide who to call first in seconds instead of listening to voicemails.",
+    ],
+    features: [
+      {
+        title: "The four questions that matter",
+        text: "Every caller is asked about their timeline, budget or target price, financing or pre-approval status, and the property or area they are interested in.",
+      },
+      {
+        title: "A score for every lead",
+        text: "Each call gets a 0 to 100 lead score, an intent rating of high, medium, or low, and the caller's overall sentiment, so the hottest leads stand out.",
+      },
+      {
+        title: "Objections and next step",
+        text: "Concerns the caller raised, like price, rates, or location, are noted along with a one-line recommendation for what to do next with this lead.",
+      },
+      {
+        title: "Straight into your CRM",
+        text: "The contact, call summary, and qualification answers are sent to Follow Up Boss, HubSpot, or GoHighLevel directly, or to almost any other CRM through a webhook.",
+      },
+      {
+        title: "Tagged for follow-up",
+        text: "Leads arrive tagged by outcome, such as Qualified, Showing Booked, High Intent, or Warm Transfer, so you can filter and build follow-up around them.",
+      },
+      {
+        title: "Recording and transcript",
+        text: "Every call is recorded and transcribed in your Virtexa portal, so you can hear exactly what the caller said before you call them back.",
+      },
+    ],
+    comparison: {
+      heading: "What you know after a call",
+      intro:
+        "The difference between a missed or rushed call and a call qualified by your Virtexa AI voice agent.",
+      them: "Voicemail or a rushed call",
+      rows: [
+        {
+          label: "Who called",
+          them: "A number, if they left one",
+          us: "Name and best callback number, confirmed before the call ends",
+        },
+        {
+          label: "What they want",
+          them: "Often unclear until you call back",
+          us: "Buying, selling, a specific listing, or something else",
+        },
+        {
+          label: "Timeline, budget, and financing",
+          them: "Unknown until you ask",
+          us: "Captured on the call and written into the CRM note",
+        },
+        {
+          label: "How hot the lead is",
+          them: "Your best guess",
+          us: "A 0 to 100 lead score, intent rating, and sentiment",
+        },
+        {
+          label: "What happens next",
+          them: "Depends on when you get to it",
+          us: "A booked showing, a live transfer to you, or a clear next-step note",
+        },
+      ],
+    },
+    steps: [
+      {
+        title: "System Audit",
+        text: "We look at where your calls come from and what you need to know about a lead before you call them back.",
+      },
+      {
+        title: "Script the questions",
+        text: "We write the conversation around your market and listings, so the agent qualifies naturally instead of reading from a form.",
+      },
+      {
+        title: "Connect your CRM",
+        text: "We connect your CRM and calendar, then test the agent against real call scenarios before it goes live.",
+      },
+      {
+        title: "Act on scored leads",
+        text: "Every call lands in your CRM with its score, answers, and next step, ready for you or your team to follow up.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What does the AI ask callers?",
+        a: "It first finds out what the caller needs, such as buying, selling, or asking about a specific listing. Then it asks about their timeline, budget or target price, financing or pre-approval status, and the property or area they care about. Before the call ends, it confirms their name and best callback number.",
+      },
+      {
+        q: "How is the lead score worked out?",
+        a: "After each call, the conversation is analyzed for buying or selling intent and sentiment, and given a score from 0 (no intent) to 100 (ready to act). Leads scoring 80 or above are tagged High Intent in your CRM.",
+      },
+      {
+        q: "Will it make up answers about my listings?",
+        a: "No. The agent only answers from the listings you have loaded into your Virtexa portal, and it is told never to invent property details, prices, or availability. When a caller needs something it can't answer, it can warm-transfer them to you or take a message.",
+      },
+      {
+        q: "Does qualification slow down hot leads?",
+        a: "No. If a caller asks for you, wants to negotiate, or has an urgent question, the agent warm-transfers them to your phone straight away and briefs you on who is calling and what they want. Callers ready to see a home can book a showing on your calendar during the call.",
+      },
+      {
+        q: "What if a caller hangs up before the AI can talk to them?",
+        a: "Callers who hang up before speaking are listed under Missed Calls in your Virtexa portal, so you can call them back.",
+      },
+    ],
+    relatedPost: "real-estate-isa-cost",
   },
   {
     slug: "appointment-booking",
