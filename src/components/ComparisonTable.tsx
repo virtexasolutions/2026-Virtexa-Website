@@ -19,7 +19,7 @@ const rows: {
     feature: "Qualifies the lead",
     voicemail: "no",
     service: "Takes a message",
-    virtexa: "Budget, timeline & motivation logged to your CRM",
+    virtexa: "Timeline, budget & financing logged to your CRM",
   },
   {
     feature: "Knows your listings",

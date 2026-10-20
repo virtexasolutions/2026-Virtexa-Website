@@ -162,7 +162,7 @@ export default function Privacy() {
           or transfer calls for a client, we collect caller information on that
           client's behalf. This can include the caller's name, phone number,
           email, call recordings and transcripts, and details such as property
-          interests, budget, timeline, and motivation. Calls are recorded and
+          interests, budget, timeline, and financing status. Calls are recorded and
           transcribed. We store this information in the client's CRM and
           systems.
         </p>

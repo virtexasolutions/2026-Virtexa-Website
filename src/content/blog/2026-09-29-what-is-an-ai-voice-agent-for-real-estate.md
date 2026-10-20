@@ -36,7 +36,7 @@ Many agents already use some kind of call coverage. Here is how an AI voice agen
 | Updates your CRM automatically | No | No | Rarely | Yes |
 | Knows your listings and process | No | No | Limited | Yes, when trained on them |
 
-The biggest difference is **what happens after the call.** Voicemail and most answering services hand you a message that still needs follow-up. An AI voice agent can finish the job: the lead is qualified, the appointment is booked, and the details are already in your CRM.
+The biggest difference is **what happens after the call.** Voicemail and most answering services hand you a message that still needs follow-up. An AI voice agent can finish the job: the [lead is qualified](/solutions/lead-qualification), the appointment is booked, and the details are already in your CRM.
 
 ## Why speed matters so much in real estate
 
