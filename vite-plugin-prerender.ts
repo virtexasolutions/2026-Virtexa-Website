@@ -6,6 +6,7 @@ import {
   BLOG_DESCRIPTION,
   BLOG_PATH,
   BLOG_TITLE,
+  SITE_NAME,
   SITE_URL,
   absoluteUrl,
   postPath,
@@ -141,6 +142,39 @@ function sitemap(routes: PrerenderRoute[]) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}</urlset>\n`;
 }
 
+/** Summary of the company for AI answer engines, at the top of llms.txt. */
+const LLMS_ABOUT = `Virtexa Solutions builds custom AI voice agents for real estate agents, teams, and brokerages in the United States.
+
+- The AI voice agent answers every inbound call 24/7, in under two rings.
+- It qualifies each caller on timeline, budget or target price, financing or pre-approval, and the property or area they want, then scores the lead from 0 to 100.
+- It books showings on the agent's Google or Outlook calendar, offering only open times, and warm-transfers hot leads to the agent's phone.
+- Brokerages get an AI receptionist that routes callers to the right agent by name or by property address.
+- Every call is recorded and transcribed, and sent to Follow Up Boss, HubSpot, or GoHighLevel directly, or to other CRMs through Zapier, Make, or a webhook.
+- It answers inbound calls only. It does not make outbound calls or send text messages.
+- The Virtexa team builds and tests each agent; most go live within 10 to 14 days. Pricing is custom-quoted after a free 30-minute System Audit.`;
+
+const LLMS_SECTIONS: [string, (path: string) => boolean][] = [
+  ["Solutions", (p) => p === "/" || p.startsWith("/solutions/")],
+  ["Comparisons", (p) => p.startsWith("/compare/")],
+  ["Integrations", (p) => p.startsWith("/integrations")],
+  ["Blog", (p) => p.startsWith(`${BLOG_PATH}/`)],
+  ["Company", (p) => p === "/founders"],
+];
+
+/** A Markdown map of the site for AI tools (https://llmstxt.org). */
+function llmsTxt(pages: { path: string; seo: PageSeo }[]) {
+  const sections = LLMS_SECTIONS.map(([name, matches]) => {
+    const links = pages
+      .filter((page) => matches(page.path))
+      .map(
+        ({ path: p, seo }) =>
+          `- [${seo.title}](${absoluteUrl(p)}): ${seo.description}`,
+      );
+    return links.length ? `## ${name}\n\n${links.join("\n")}\n` : "";
+  });
+  return `# ${SITE_NAME}\n\n> AI voice agents for real estate that answer every call, qualify the lead, and book the showing.\n\n${LLMS_ABOUT}\n\n${sections.filter(Boolean).join("\n")}`;
+}
+
 function rss(posts: BlogPost[]) {
   const items = posts
     .map((post) => {
@@ -179,7 +213,7 @@ function writeFile(file: string, contents: string) {
  * src/lib/routes.ts to static HTML in the client build (dist/), with that
  * page's title, meta tags, canonical URL and JSON-LD, so search engines and
  * link previews see the full page without running JavaScript. It also writes
- * dist/404.html, dist/sitemap.xml and the blog RSS feed.
+ * dist/404.html, dist/sitemap.xml, dist/llms.txt and the blog RSS feed.
  */
 export default function prerenderPlugin({
   clientOutDir = "dist",
@@ -212,7 +246,11 @@ export default function prerenderPlugin({
       };
 
       const routes = entry.prerenderRoutes();
+      const pages: { path: string; seo: PageSeo }[] = [];
       for (const route of routes) {
+        if (route.sitemap !== false) {
+          pages.push({ path: route.path, seo: entry.render(route.path).seo! });
+        }
         const file =
           route.path === "/"
             ? "index.html"
@@ -221,6 +259,7 @@ export default function prerenderPlugin({
       }
       writeFile(path.join(clientDir, "404.html"), render(entry.NOT_FOUND_PATH));
       writeFile(path.join(clientDir, "sitemap.xml"), sitemap(routes));
+      writeFile(path.join(clientDir, "llms.txt"), llmsTxt(pages));
       writeFile(path.join(clientDir, BLOG_PATH, "rss.xml"), rss(entry.posts));
 
       fs.rmSync(ssrOutDir, { recursive: true, force: true });

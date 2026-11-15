@@ -8,6 +8,8 @@ export type Integration = {
   metaTitle: string;
   /** Meta description, ideally under 160 characters. */
   description: string;
+  /** 40-60 word direct answer shown at the top as "In short". */
+  summary: string;
   intro: string[];
   features: { title: string; text: string }[];
   /** An example of what a call looks like once it reaches the CRM. */
@@ -53,6 +55,8 @@ export const integrations: Integration[] = [
     metaTitle: "AI Voice Agent for Follow Up Boss | Virtexa",
     description:
       "Connect Virtexa's AI voice agent to Follow Up Boss. Every call arrives as an inquiry with the caller's details, qualification answers, lead score, and tags.",
+    summary:
+      "Virtexa connects directly to Follow Up Boss. Every call its AI voice agent answers is sent to Follow Up Boss as an inquiry from the source Virtexa AI, with the caller's name and number, a call summary, their timeline, budget, and financing, any booked showing, and tags you can build smart lists and lead flow rules around.",
     intro: [
       "Follow Up Boss is only as good as the leads that make it in. Calls are the leak: a buyer rings while you are at a showing, leaves no message, and never becomes a contact at all. Even the calls you do take often end up as a name and a number with no notes.",
       "Virtexa's AI voice agent answers every call to your business, day or night, qualifies the caller, and sends the lead straight into Follow Up Boss. Each one arrives as an inquiry from the source Virtexa AI, with the caller's details, a summary of the call, their timeline, budget, and financing, any showing they booked, and tags you can build smart lists around.",

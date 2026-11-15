@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { ArrowLeft, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
+import AnswerBox from "@/components/AnswerBox";
 import SubpageHeader from "@/components/SubpageHeader";
 import {
   BLOG_PATH,
@@ -97,6 +98,12 @@ function Article({ post }: { post: Post }) {
               {post.readingMinutes} min read
             </p>
           </header>
+
+          {post.summary && (
+            <div className="mt-8">
+              <AnswerBox summary={post.summary} />
+            </div>
+          )}
 
           <div
             className="blog-prose mt-10"

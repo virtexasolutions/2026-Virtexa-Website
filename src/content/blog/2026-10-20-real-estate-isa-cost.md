@@ -3,6 +3,7 @@ title: "How Much Does a Real Estate ISA Cost? The Full Picture"
 description: What a real estate inside sales agent really costs once you add pay, bonuses, benefits, tools, and your management time, plus how offshore and AI options compare.
 date: 2026-10-20
 author: Virtexa Solutions
+summary: "A full-time real estate ISA typically earns about $40,000 to $65,000 a year with bonuses, or $60,000 to $80,000 with experience. Add benefits and payroll costs, tools, training, turnover, and your management time, and the first-year cost can pass $70,000. Offshore callers cost far less, and an AI voice agent covers inbound calls."
 tags: [ISA, Real Estate, Lead Response]
 ---
 

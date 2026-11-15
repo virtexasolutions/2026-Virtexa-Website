@@ -3,6 +3,7 @@ title: "Speed to Lead in Real Estate: Why the First Response Wins"
 description: Why response time decides which agent wins a real estate lead, where most teams lose time, and practical ways to respond to every inquiry in minutes, day or night.
 date: 2026-09-29
 author: Virtexa Solutions
+summary: "Speed to lead is how quickly you have a real conversation with someone after they reach out. It matters because interest fades fast and most buyers interview only one agent. To respond faster, measure your current response times, make sure every call is answered, route leads automatically, and keep every lead in one place."
 tags: [Lead Response, Real Estate, Automation]
 ---
 

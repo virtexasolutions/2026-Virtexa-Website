@@ -3,6 +3,7 @@ title: What Is an AI Voice Agent for Real Estate? A Plain-English Guide
 description: What an AI voice agent does for real estate agents, teams, and brokerages, how it differs from an answering service or IVR, and how to tell if your business is ready for one.
 date: 2026-09-29
 author: Virtexa Solutions
+summary: "An AI voice agent for real estate answers your business calls in a natural voice, at any hour. It asks each caller your qualifying questions, books showings on your calendar, transfers hot leads to you live, and logs every call to your CRM. Unlike voicemail or an answering service, it finishes the job instead of taking a message."
 tags: [AI Voice Agents, Real Estate, Lead Response]
 ---
 

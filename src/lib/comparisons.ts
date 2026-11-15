@@ -10,6 +10,8 @@ export type ComparisonPage = {
   metaTitle: string;
   /** Meta description, ideally under 160 characters. */
   description: string;
+  /** 40-60 word direct answer shown at the top as "In short". */
+  summary: string;
   intro: string[];
   table: Comparison;
   /** Body sections. Paragraphs and bullets accept inline Markdown links. */
@@ -30,6 +32,8 @@ export const comparisons: ComparisonPage[] = [
     metaTitle: "AI vs ISA for Real Estate Teams: Which Fits? | Virtexa",
     description:
       "An honest comparison of an AI ISA and a human inside sales agent for real estate: what each does well, where each falls short, and when to use both.",
+    summary:
+      "Choose an AI ISA if most of your leads call you: it answers every call 24/7, qualifies each caller, books showings, and logs it all to your CRM, with no hiring or turnover. Choose a human ISA if you need outbound follow-up and long-term nurture, which the AI does not do. Many teams use both.",
     intro: [
       "An inside sales agent's job comes in two halves. One half is answering: picking up when a buyer or seller calls, finding out what they need, and setting the appointment. The other half is chasing: calling online leads who never picked up the phone, working through an old database, and following up for months until someone is ready.",
       "An AI ISA and a human ISA are good at different halves. This guide compares them side by side, including the things an AI voice agent does not do, so you can decide which fits your team, or whether you need both.",

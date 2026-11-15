@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Calendar, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import AnswerBox from "@/components/AnswerBox";
 import Footer from "@/components/Footer";
 import SubpageHeader from "@/components/SubpageHeader";
 import {
@@ -122,6 +123,9 @@ function IntegrationPage({ integration }: { integration: IntegrationData }) {
             >
               {integration.heading}
             </h1>
+            <div className="mt-6">
+              <AnswerBox summary={integration.summary} />
+            </div>
             <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
               {integration.intro.map((p, i) => (
                 <p key={i}>{p}</p>
